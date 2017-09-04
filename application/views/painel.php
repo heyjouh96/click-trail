@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
+
         
-    </head>
+<h1>Click-trail</h1>
+
+<p>painel</p>        
     
-    <body>
-        
-        <h1>Click-trail</h1>
-        
-    </body>
-</html>
