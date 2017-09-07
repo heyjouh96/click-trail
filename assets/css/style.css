@@ -1,0 +1,67 @@
+
+/*DIVS PRINCIPAIS*/
+#header,#info,#download,#about-us{
+    width:100%;
+    height:auto;
+}
+
+/*HEADER*/
+
+#header{
+    background:navy;
+    color:white;
+    font-weight:bold; 
+    height:80vh;
+    text-align: center;
+    padding: 150px;
+    margin:auto;
+}
+/*INFO*/
+#info{
+    margin-top:50px;
+    color:navy;
+    font-family: 'Open Sans',sans-serif;
+    font-weight:bold; 
+    height:50vh;
+    top: 31.25rem;
+}
+
+/*DOWNLOAD*/
+#download{
+    background:navy;
+    color:white;
+    margin-top:50px;
+    font-family: 'Open Sans',sans-serif;
+    font-weight:bold;
+    height:50vh;
+}
+
+/*SOBRE NÓS*/
+#about-us{
+    margin-top:50px;
+    color:navy;
+    font-family: 'Open Sans',sans-serif;
+    font-weight:bold; 
+    height:50vh;
+}
+
+/*OUTRAS TAGS*/
+h1{
+    font-size: 50px;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 3px 3px #64517f;
+}
+h2{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    float: none;
+    display: block;
+    padding:10px ;
+    margin:20px ;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: .01rem;
+}
