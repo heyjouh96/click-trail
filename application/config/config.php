@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://click-trail-wickedjhow.c9users.io/click-trail/';
+//$config['base_url'] = 'https://click-trail-gustavo76.c9users.io/click-trail/';
 
 /*
 |--------------------------------------------------------------------------

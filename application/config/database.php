@@ -77,6 +77,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'wickedjhow',
+	//'username' => 'gustavo76',
 	'password' => '',
 	'database' => 'click-trail',
 	'dbdriver' => 'mysqli',
