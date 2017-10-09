@@ -46,10 +46,12 @@ class Painel extends CI_Controller {
 	    	}
 	    	else{
 	    		redirect('painel');
+	    		$this->session->set_flashdata('falhaLogin','Usuário ou senha incorretos!');
 	    	}
 	    }
 	    else{
 	    	redirect('painel');
+	    	$this->session->set_flashdata('falhaLogin','Usuário ou senha incorretos!');
 	    }
 	}
 	
@@ -61,7 +63,26 @@ class Painel extends CI_Controller {
 	
 	public function cadastrar()
 	{
-	    echo "cadastro";
+	    $this->form_validation->set_rules('nome',	'Nome', 		'trim|max_length[20]|required');
+	    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'trim|max_length[50]|required');
+	    $this->form_validation->set_rules('email',	'E-mail',		'trim|max_length[50]|required');
+	    $this->form_validation->set_rules('senha1', 'Senha',		'trim|max_length[20]|required');
+	    
+		if($this->form_validation->run() == true){
+			
+			if($this->input->post('senha1') != $this->input->post('senha2')){
+				$this->session->set_flashdata('falhaCadastro','As senhas não conferem!');
+			}
+			else{
+				$this->Painel_model->cadastrar($this->input->post());
+				redirect('painel');
+			}
+			
+		}
+		else{
+			$this->session->set_flashdata('falhaCadastro', $this->form_validation->error_string('',''));
+			redirect('painel');
+		}
 	}
 	
 }

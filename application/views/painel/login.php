@@ -1,5 +1,38 @@
-
 <div class="container">
+    
+    <!-- LOGIN - MENSAGEM DE ERRO -->
+    <?php if($this->session->flashdata('falhaLogin')){ ?>
+        <div class="alert alert-warning alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <?= $this->session->flashdata('falhaLogin'); ?>
+        </div>
+    <?php } ?>
+    
+    <!-- CADASTRO - MENSAGEM DE ERRO -->
+    <?php if($this->session->flashdata('falhaCadastro')){ ?>
+        <div class="alert alert-warning alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <?= $this->session->flashdata('falhaCadastro'); ?>
+        </div>
+    <?php } ?>
+    
+    <!-- CADASTRO - MENSAGEM DE SUCESSO -->
+    <?php if($this->session->flashdata('sucesCadastro')){ ?>
+        <div class="alert alert-success alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <?= $this->session->flashdata('sucesCadastro'); ?>
+        </div>
+    <?php } ?>
+    
+    
+    
+    
     
     <h1>Área de Usuários</h1>
     
