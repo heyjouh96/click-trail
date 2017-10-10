@@ -7,11 +7,14 @@ class Painel extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Painel_model');
 	}
-
+	
+	// CARREGA PÁGINA DE LOGIN OU PAINEL CASO JÁ LOGADO
 	public function index()
 	{
 		if($this->session->userdata('logado') == true){
 			$dados['usuario'] = $this->Painel_model->getUsuario($this->session->userdata('id'));
+			$dados['sites'] = $this->Painel_model->getSites($this->session->userdata('id'));
+			
 			
 			$this->load->view('includes/header');
 			$this->load->view('painel/painel', $dados);
@@ -24,6 +27,7 @@ class Painel extends CI_Controller {
 		}
 	}
 	
+	// FAZER LOGIN
 	public function logar()
 	{
 	    $this->form_validation->set_rules('email', 'E-mail', 'trim|required');
@@ -55,12 +59,14 @@ class Painel extends CI_Controller {
 	    }
 	}
 	
+	// FAZER LOGOUT (ENCERRA SESSÃO)
 	public function logout()
 	{
 		$this->session->sess_destroy();
 		redirect('painel');
 	}
 	
+	// CADASTRAR USUÁRIO
 	public function cadastrar()
 	{
 	    $this->form_validation->set_rules('nome',	'Nome', 		'trim|max_length[20]|required');
@@ -82,6 +88,22 @@ class Painel extends CI_Controller {
 		else{
 			$this->session->set_flashdata('falhaCadastro', $this->form_validation->error_string('',''));
 			redirect('painel');
+		}
+	}
+	
+	// USUÁRIO CADASTRA SITE
+	public function cadastrarSite()
+	{
+		/* Verifica se há alguma informação sendo enviada, neste caso o cadastro do site
+		Caso nada esteja sendo enviado, chama a view cadastrar_site.php */
+		if($this->input->post()){
+			$this->Painel_model->cadastrarSite($this->input->post(), $this->session->userdata('id'));
+			redirect('painel/cadastrarSite');
+		}
+		else{
+			$this->load->view('includes/header');
+			$this->load->view('painel/cadastrar_site');
+			$this->load->view('includes/footer');
 		}
 	}
 	
