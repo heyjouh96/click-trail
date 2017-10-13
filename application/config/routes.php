@@ -52,3 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'paginas';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['teste/index/(:num)'] = 'teste/$1';
+$route['click-trail/index.php/painel'] = 'click-trail/index.php/painel';

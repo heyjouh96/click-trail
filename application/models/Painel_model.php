@@ -53,10 +53,30 @@ class Painel_model extends CI_MODEL {
     
 	public function getSiteInfo($id){
         // Pega as informações do site pelo seu ID.
-        $site = $this->db->get_where('TB_Sites', array('cd_Site' => $id))->row();
+        //$site = $this->db->get_where('TB_Sites', array('cd_Site' => $id))->row();
+        $site = $this->db->query("
+            SELECT s.cd_Site, s.ds_Dominio, SUM(c.count) AS total
+            FROM TB_Sites AS s
+                INNER JOIN TB_Usuarios AS u ON s.cd_Usuario = u.cd_Usuario
+                INNER JOIN clickcount AS c ON s.ds_Dominio = c.host
+                WHERE cd_Site = '$id'
+        ")->result();
        
         return $site;
 	}
+	
+	
     
+    public function contaClick($id, $host)
+    {
+        $query = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id'")->row();
+        if($query > 0){
+            $this->db->query("UPDATE clickcount SET count = count+1 WHERE ds = '$id'");
+        }
+        else{
+            $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1)");    
+        }
+
+    }
 }
 

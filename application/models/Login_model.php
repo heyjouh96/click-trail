@@ -9,7 +9,6 @@ class Login_model extends CI_MODEL {
 	public function logar($email, $senha){
 	    
 	    $query = $this->db->get_where('TB_Usuarios', array('ds_EmailUsuario' => $email, 'ds_SenhaUsuario' => $senha))->row();
-	   
 	    return $query;
 	}
     

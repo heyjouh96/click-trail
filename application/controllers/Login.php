@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Painel extends CI_Controller {
+class Login extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
@@ -89,36 +89,6 @@ class Painel extends CI_Controller {
 			$this->session->set_flashdata('falhaCadastro', $this->form_validation->error_string('',''));
 			redirect('painel');
 		}
-	}
-	
-	// USUÁRIO CADASTRA SITE
-	public function cadastrarSite()
-	{
-		/* Verifica se há alguma informação sendo enviada, neste caso o cadastro do site
-		Caso nada esteja sendo enviado, chama a view cadastrar_site.php */
-		if($this->input->post()){
-			$this->Painel_model->cadastrarSite($this->input->post(), $this->session->userdata('id'));
-			redirect('painel/cadastrarSite');
-		}
-		else{
-			$this->load->view('includes/header');
-			$this->load->view('painel/cadastrar_site');
-			$this->load->view('includes/footer');
-		}
-	}
-	
-	public function siteInfo($id)
-	{
-	    $dados['info'] = $this->Painel_model->getSiteInfo($id);
-	  
-	    $this->load->view('includes/header');
-		$this->load->view('painel/site_info', $dados);
-		$this->load->view('includes/footer');
-	}
-	
-	public function getClick()
-	{
-		$this->Painel_model->contaClick($this->input->post('id'), $this->input->post('host'));
 	}
 	
 }
