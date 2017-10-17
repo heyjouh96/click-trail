@@ -6,6 +6,17 @@ class Painel_model extends CI_MODEL {
     	parent::__construct();
 	}
 	
+	public function contaClick($id, $host){
+        $query = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id'")->row();
+        if($query > 0){
+            $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$id'");
+        }
+        else{
+            $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1)");    
+        }
+
+    }
+	
 	public function getUsuario($id){
 	    // Pega as informações do Usuário
 	    $usuario = $this->db->get_where('TB_Usuarios', array('cd_Usuario' => $id))->row();
@@ -22,9 +33,8 @@ class Painel_model extends CI_MODEL {
     
 	public function getSiteInfo($id){
         // Pega as informações do site pelo seu ID.
-        //$site = $this->db->get_where('TB_Sites', array('cd_Site' => $id))->row();
         $site = $this->db->query("
-            SELECT s.cd_Site, s.ds_Dominio, SUM(c.count) AS total
+            SELECT s.cd_Site, s.ds_Dominio, SUM(c.qtd) AS total
             FROM TB_Sites AS s
                 INNER JOIN TB_Usuarios AS u ON s.cd_Usuario = u.cd_Usuario
                 INNER JOIN clickcount AS c ON s.ds_Dominio = c.host
@@ -34,16 +44,19 @@ class Painel_model extends CI_MODEL {
         return $site;
 	}
 	
-    public function contaClick($id, $host)
-    {
-        $query = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id'")->row();
-        if($query > 0){
-            $this->db->query("UPDATE clickcount SET count = count+1 WHERE ds = '$id'");
-        }
-        else{
-            $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1)");    
-        }
-
-    }
+	public function getSiteHost($id){
+	    $host = $this->db->query("SELECT ds_Dominio FROM TB_Sites WHERE cd_Site = '$id'")->row();
+	    
+	    return $host;
+	}
+	
+	public function getSiteItens($host){
+	    // retorna tudo da tabela clickcount do dominio passado por parâmetro
+	    $itens = $this->db->get_where('clickcount', array('host' => $host->ds_Dominio))->result();
+	    
+	    return $itens;
+	}
+	
+    
 }
 

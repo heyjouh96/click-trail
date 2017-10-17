@@ -30,7 +30,10 @@ class Painel extends CI_Controller {
 	public function siteInfo($id)
 	{
 	    $dados['info'] = $this->Painel_model->getSiteInfo($id);
-	  
+	    $dados['host'] = $this->Painel_model->getSiteHost($id);
+	    // pega informação de cada item clicado (ds)
+	    $dados['itens'] = $this->Painel_model->getSiteItens($dados['host']);
+
 	    $this->load->view('includes/header');
 		$this->load->view('painel/site_info', $dados);
 		$this->load->view('includes/footer');
