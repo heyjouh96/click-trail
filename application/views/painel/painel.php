@@ -7,8 +7,8 @@
     
     <p> <?= $usuario->nm_Usuario; ?> </p>  
     
-    <p> <a href="<?= base_url() ?>painel/cadastrarSite">Cadastrar novo Site</a> </p>
-    <p> <a href="<?= base_url() ?>painel/logout">Sair</a> </p>
+    <p> <a href="<?= base_url() ?>cadastro/cadastrarSite">Cadastrar novo Site</a> </p>
+    <p> <a href="<?= base_url() ?>login/logout">Sair</a> </p>
     
     <hr>
     

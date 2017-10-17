@@ -5,10 +5,9 @@ class Login extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('Painel_model');
+		$this->load->model('Login_model');
 	}
 	
-	// CARREGA PÁGINA DE LOGIN OU PAINEL CASO JÁ LOGADO
 	public function index()
 	{
 		if($this->session->userdata('logado') == true){
@@ -22,7 +21,7 @@ class Login extends CI_Controller {
 		}
 		else{
 			$this->load->view('includes/header');
-			$this->load->view('painel/login');
+			$this->load->view('login');
 			$this->load->view('includes/footer');
 		}
 	}
@@ -66,29 +65,5 @@ class Login extends CI_Controller {
 		redirect('painel');
 	}
 	
-	// CADASTRAR USUÁRIO
-	public function cadastrar()
-	{
-	    $this->form_validation->set_rules('nome',	'Nome', 		'trim|max_length[20]|required');
-	    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'trim|max_length[50]|required');
-	    $this->form_validation->set_rules('email',	'E-mail',		'trim|max_length[50]|required');
-	    $this->form_validation->set_rules('senha1', 'Senha',		'trim|max_length[20]|required');
-	    
-		if($this->form_validation->run() == true){
-			
-			if($this->input->post('senha1') != $this->input->post('senha2')){
-				$this->session->set_flashdata('falhaCadastro','As senhas não conferem!');
-			}
-			else{
-				$this->Painel_model->cadastrar($this->input->post());
-				redirect('painel');
-			}
-			
-		}
-		else{
-			$this->session->set_flashdata('falhaCadastro', $this->form_validation->error_string('',''));
-			redirect('painel');
-		}
-	}
 	
 }
