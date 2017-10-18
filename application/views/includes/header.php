@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
     
        <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> 

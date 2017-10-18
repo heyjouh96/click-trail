@@ -7,12 +7,19 @@ class Painel_model extends CI_MODEL {
 	}
 	
 	public function contaClick($id, $host){
-        $query = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id'")->row();
-        if($query > 0){
-            $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$id'");
+	    $queryHOST = $this->db->query("SELECT * FROM clickcount WHERE host = '$host'")->result();
+        $queryID = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id' AND host = '$host'")->result();
+        
+        if($queryHOST == null){
+            $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1)");
         }
         else{
-            $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1)");    
+            if($queryID == null){
+                $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1)");
+            }
+            else{
+                $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$id' AND host = '$host'");
+            }
         }
 
     }
