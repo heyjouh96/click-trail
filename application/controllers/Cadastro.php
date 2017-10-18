@@ -27,6 +27,7 @@ class Cadastro extends CI_Controller {
 			
 			if($this->input->post('senha1') != $this->input->post('senha2')){
 				$this->session->set_flashdata('falhaCadastro','As senhas não conferem!');
+				redirect('cadastro');
 			}
 			else{
 				$this->Cadastro_model->cadastrar($this->input->post());

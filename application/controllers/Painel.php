@@ -15,14 +15,13 @@ class Painel extends CI_Controller {
 			$dados['usuario'] = $this->Painel_model->getUsuario($this->session->userdata('id'));
 			$dados['sites'] = $this->Painel_model->getSites($this->session->userdata('id'));
 			
-			
 			$this->load->view('includes/header');
 			$this->load->view('painel/painel', $dados);
 			$this->load->view('includes/footer');
 		}
 		else{
 			$this->load->view('includes/header');
-			$this->load->view('painel/login');
+			$this->load->view('login');
 			$this->load->view('includes/footer');
 		}
 	}

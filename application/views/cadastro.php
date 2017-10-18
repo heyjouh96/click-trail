@@ -45,7 +45,7 @@
         <label for="senha2">Confirmar Senha</label>
         <input type="password" name="senha2" placeholder="Digite sua senha novamente"> <br>
         
-        
+        <input type="submit" value="Cadastrar">
     </form>
 
 </div>    

@@ -6,8 +6,16 @@ class Cadastro_model extends CI_MODEL {
     	parent::__construct();
 	}
 	
+	// Insere os dados na TB_Usuarios
 	public function cadastrar($dados){
-        // Insere os dados na TB_Usuarios
+	    
+        // checa se ja existe o e-mail cadastrado
+        $checkEmail = $this->db->get_where('TB_Usuarios', array('ds_EmailUsuario' => $dados['email']))->row();
+        if($checkEmail !== null){
+            $this->session->set_flashdata('falhaCadastro','E-mail já cadastrado, faça login!');
+            redirect('cadastro');
+        }
+        
         $query = $this->db->query("INSERT INTO TB_Usuarios 
         							VALUES ('','".$dados['nome']."','".$dados['sbnome']."','".$dados['email']."','".$dados['senha1']."',1)");
         							

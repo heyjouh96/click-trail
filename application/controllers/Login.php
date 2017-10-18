@@ -6,6 +6,7 @@ class Login extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Login_model');
+		$this->load->model('Painel_model');
 	}
 	
 	public function index()
@@ -62,7 +63,7 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('painel');
+		redirect('login');
 	}
 	
 	
