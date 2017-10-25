@@ -40,7 +40,9 @@ class Painel extends CI_Controller {
 	
 	public function getClick()
 	{
-		$this->Painel_model->contaClick($this->input->post('id'), $this->input->post('host'));
+		$semana = date('W');
+		$mes = date('n');
+		$this->Painel_model->contaClick($this->input->post('id'), $this->input->post('host'), $semana, $mes);
 	}
 	
 }
