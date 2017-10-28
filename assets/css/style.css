@@ -10,13 +10,67 @@
 #header{
     width:100%;
     height:661px;
-    background:#333;
+    background:#030321;
     color:white;
     font-weight:bold; 
     text-align: center;
     padding-top: 120px;
-    margin:auto;
+    
 }
+
+html, body{
+  height: 100%;
+  font-weight: 800;
+}
+
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+    stroke: #DCDCDC;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #FFF;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #F00;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #DCDCDC;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FFF;
+	animation-delay: -5s;
+}
+
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
 /*INFO*/
 #info{
     height:auto;
@@ -61,6 +115,7 @@ h2{
     font-weight: 300;
 }
 
+
 /*Nav*/
 .navbar-light .navbar-nav .nav-link {
     color:#999;
@@ -74,4 +129,90 @@ h2{
 .edit{
     padding-top:100px;
     padding-bottom:80px;
+}
+
+/*LOGIN*/
+
+
+.login-block{
+background: #030321;  /* fallback for old browsers */
+background: linear-gradient(to bottom, #030321, #191970);
+float:left;
+width:100%;
+padding : 50px 0;
+}
+.banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+.container{
+    background:#fff; 
+    border-radius: 10px; 
+    box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+}
+
+.login-sec{
+    padding: 50px 30px; 
+    position:relative;
+}
+
+.login-sec .copy-text{
+    position:absolute; 
+    width:80%; 
+    bottom:20px; 
+    font-size:13px; 
+    text-align:center;
+}
+
+.login-sec .copy-text i{
+    color:#FEB58A;
+}
+
+.login-sec .copy-text a{
+    color:#E36262;
+}
+
+.login-sec h2{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px; 
+    color: #483D8B;
+}
+
+.login-sec h2:after{
+    content:" "; 
+    width:100px; 
+    height:5px; 
+    background:#000080; 
+    display:block; 
+    margin-top:20px; 
+    border-radius:3px; 
+    margin-left:auto;
+    margin-right:auto
+}
+
+.btn-login{
+    background: #030321; 
+    color:#fff; 
+    font-weight:600;
+}
+
+.banner-text{
+    width:70%; 
+    position:absolute; 
+    bottom:40px; 
+    padding-left:20px;
+}
+.banner-text h2{
+    color:#fff; 
+    font-weight:600;
+}
+.banner-text h2:after{
+    content:" "; 
+    width:100px; 
+    height:5px; 
+    background:#FFF; 
+    display:block; 
+    margin-top:20px; 
+    border-radius:3px;
+}
+.banner-text p{
+    color:#fff;
 }

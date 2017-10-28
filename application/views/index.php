@@ -23,16 +23,30 @@
                 </div>
             </nav>
             
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Click-trail</h1>
-                            
-                    <p>Contador de clicks</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                    	<svg viewBox="0 0 960 300">
+                            <symbol id="s-text">
+                        		<text text-anchor="middle" x="50%" y="80%">Click-trail </text>
+                        	</symbol>
+                        
+                        	<g class = "g-ants">
+                        		<use xlink:href="#s-text" class="text-copy"></use>
+                        		<use xlink:href="#s-text" class="text-copy"></use>
+                        		<use xlink:href="#s-text" class="text-copy"></use>
+                        		<use xlink:href="#s-text" class="text-copy"></use>
+                        		<use xlink:href="#s-text" class="text-copy"></use>
+                        	</g>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>    
+</div>
+    
+
     
 <!--INFO PLUGIN-->
 <div class="container-fluid" transform: translateY(-13.3333px);opacity: 0.92;>
@@ -107,4 +121,6 @@
             </div>
         </div>
     </div>
+    
+
 </div>
