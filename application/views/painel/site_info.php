@@ -1,5 +1,5 @@
 
-
+<?= date('W'); ?>
 
 <div class="container-fluid">      
     

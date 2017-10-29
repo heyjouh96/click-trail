@@ -28,7 +28,7 @@ class Painel_model extends CI_MODEL {
                         $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1,$s,$m)");
                     }
                     else{
-                        $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$id' AND host = '$host'");       
+                        $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$id' AND host = '$host' AND mes = $m AND semana = $s");       
                     }
                 }
             }
@@ -72,6 +72,12 @@ class Painel_model extends CI_MODEL {
 	public function getSiteItens($host){
 	    // retorna tudo da tabela clickcount do dominio passado por parâmetro
 	    $itens = $this->db->get_where('clickcount', array('host' => $host->ds_Dominio))->result();
+	    /*$itens = $this->db->query("
+	        SELECT id, ds, host, qtd
+	            ON DUPLICATE KEY UPDATE qtd SET qtd = qtd + 1
+	        FROM clickcount
+	        WHERE host = '".$host->ds_Dominio."'
+	    ")->result();*/
 	    
 	    return $itens;
 	}
