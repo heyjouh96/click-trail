@@ -118,12 +118,17 @@ h2{
 
 /*Nav*/
 .navbar-light .navbar-nav .nav-link {
-    color:#999;
+    color:#f00;
     padding:30px;
+    
 }
 
 #mainNav{
-    padding:30px;
+    padding:10px;
+}
+
+#mainNav:hover{
+    color:#030321;
 }
 
 .edit{
@@ -131,7 +136,7 @@ h2{
     padding-bottom:80px;
 }
 
-/*LOGIN*/
+/*LOGIN E CADASTRO*/
 
 
 .login-block{
@@ -139,6 +144,7 @@ background: #030321;  /* fallback for old browsers */
 background: linear-gradient(to bottom, #030321, #191970);
 float:left;
 width:100%;
+height:auto;
 padding : 50px 0;
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
@@ -155,7 +161,7 @@ padding : 50px 0;
 
 .login-sec .copy-text{
     position:absolute; 
-    width:80%; 
+    width:100%; 
     bottom:20px; 
     font-size:13px; 
     text-align:center;
@@ -197,7 +203,7 @@ padding : 50px 0;
 .banner-text{
     width:70%; 
     position:absolute; 
-    bottom:40px; 
+    bottom:100px; 
     padding-left:20px;
 }
 .banner-text h2{
@@ -216,3 +222,6 @@ padding : 50px 0;
 .banner-text p{
     color:#fff;
 }
+
+
+
