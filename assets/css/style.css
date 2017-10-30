@@ -3,6 +3,7 @@
 #info,#download,#about-us{
     width:100%;
     height:auto;
+    background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
 }
 
 /*HEADER*/
@@ -223,5 +224,59 @@ padding : 50px 0;
     color:#fff;
 }
 
+/*PAINEL*/
 
 
+.username{
+    font-size:16px;
+    padding-top:10px;
+    color:red;
+}
+
+
+.navi .active a{
+    background: #0d172e;
+    border-left: 5px solid #5584ff;
+    padding-left: 15px;
+}
+
+.navi a:hover{
+    background: #122143;
+    border-left: 5px solid #5584ff;
+    padding-left: 15px;
+}
+
+.navi a{
+    
+    border-bottom: 1px solid #0b122e;
+    border-top: 1px solid #0b122e;
+    color: #ffffff;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 28px 20px;
+    text-decoration: none;
+}
+
+.side{
+    background:#030321;
+    color:#fff;
+}
+
+/*MENU*/
+.navbar{
+background-color: #030321;
+color:white;
+padding-bottom:35px;
+padding-top:20px;
+font-size:16px;
+}
+
+.navbar-brand{
+    padding-right:22px; 
+    border-right:red 2px solid;
+}
+
+.well{
+    float:right;
+}
