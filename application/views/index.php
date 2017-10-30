@@ -2,8 +2,8 @@
 
 <!-- INICIO -->
 <div id="inicio">
-    <div class="container-fluid">
-        <div id="header">
+    <div id="header">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
