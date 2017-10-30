@@ -32,7 +32,8 @@ class Painel extends CI_Controller {
 	    $dados['host'] = $this->Painel_model->getSiteHost($id);
 	    // pega informação de cada item clicado (ds)
 	    $dados['itens'] = $this->Painel_model->getSiteItens($dados['host']);
-
+		
+		
 	    $this->load->view('includes/header');
 		$this->load->view('painel/site_info', $dados);
 		$this->load->view('includes/footer');

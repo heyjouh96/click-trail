@@ -71,13 +71,13 @@ class Painel_model extends CI_MODEL {
 	
 	public function getSiteItens($host){
 	    // retorna tudo da tabela clickcount do dominio passado por parâmetro
-	    $itens = $this->db->get_where('clickcount', array('host' => $host->ds_Dominio))->result();
-	    /*$itens = $this->db->query("
-	        SELECT id, ds, host, qtd
-	            ON DUPLICATE KEY UPDATE qtd SET qtd = qtd + 1
-	        FROM clickcount
-	        WHERE host = '".$host->ds_Dominio."'
-	    ")->result();*/
+	    $itens = $this->db->query("
+	        SELECT id, ds, host, SUM(qtd) as qtd
+	            FROM clickcount
+	            WHERE host = '".$host->ds_Dominio."'
+	            GROUP BY ds
+	            
+	    ")->result();
 	    
 	    return $itens;
 	}
