@@ -36,7 +36,7 @@
             
             
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url() ?>cadastro/cadastrarSite">Cadastrar novo Site</a>
+              <a class="nav-link" href="<?= base_url() ?>paginas/cadastrarSite">Cadastrar novo Site</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url() ?>login/logout">Sair</a>
@@ -53,7 +53,7 @@
               <!-- mostra os sites cadastrados pelo usuário -->
               <?php foreach($sites as $s){ ?>
           
-                  <p> <a href="<?= base_url() ?>painel/siteInfo/<?= $s->cd_Site; ?>"> <?= $s->ds_Dominio; ?> </a></p>
+                  <p> <a href="<?= base_url() ?>painel/siteInfo/<?= $s->cd_Site; ?>"> <?= $s->nm_Site; ?> <br> <small><?= $s->ds_Dominio ?></small> </a></p>
               
               <?php } ?>    
             </li>

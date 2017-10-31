@@ -10,4 +10,11 @@ class Paginas extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 	
+	public function cadastrarSite()
+	{
+		$this->load->view('includes/header');
+		$this->load->view('painel/cadastrar_site');
+		$this->load->view('includes/footer');
+	}
+	
 }

@@ -50,7 +50,7 @@
           <div class="row">
               <div class="col-md-4 login-sec">
                   <h2 class="text-center">Fazer Cadastro</h2>
-                  <form action="<?= base_url() ?>cadastro/cadastrar" method="post" name="cadastro" class="login-form">
+                  <form action="<?= base_url() ?>usuario/cadastrar" method="post" name="cadastro" class="login-form">
                       
                       <div class="form-group">
                           <label for="nome" class="text-uppercase">Nome</label>

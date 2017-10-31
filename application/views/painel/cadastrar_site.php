@@ -48,7 +48,10 @@
     <h1>Cadastrar Site</h1>
     
     <h2>Novo Site</h2>
-    <form action="<?= base_url() ?>cadastro/cadastrarSite" method="post" name="cadastro">
+    <form action="<?= base_url() ?>site/cadastrar" method="post" name="cadastro">
+        
+        <label for="nome">Nome do Site</label>
+        <input type="text" name="nome" placeholder="Digite o nome do seu Website"> <br>
         
         <label for="dominio">Domínio</label>
         <input type="text" name="dominio" placeholder="Digite o domínio do seu Website">
