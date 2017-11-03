@@ -31,6 +31,12 @@ class Usuario extends CI_Controller {
 	    }
 	}
 	
+	public function logout(){
+		$this->session->unset_userdata('logado');
+		$this->session->unset_userdata('id');
+		redirect('paginas');
+	}
+	
 	public function cadastrar(){
 	    
 	    // PEGA OS POSTS

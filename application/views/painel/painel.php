@@ -39,7 +39,7 @@
               <a class="nav-link" href="<?= base_url() ?>paginas/cadastrarSite">Cadastrar novo Site</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url() ?>login/logout">Sair</a>
+              <a class="nav-link" href="<?= base_url() ?>usuario/logout">Sair</a>
             </li>
           </ul>
   
