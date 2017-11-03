@@ -10,6 +10,25 @@ class Paginas extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 	
+	public function login()
+	{
+		if($this->session->userdata('logado')){
+			redirect('painel');
+		}
+		else{
+			$this->load->view('includes/header');
+			$this->load->view('login');
+			$this->load->view('includes/footer');
+		}
+	}
+	
+	public function cadastro()
+	{
+		$this->load->view('includes/header');
+		$this->load->view('cadastro');
+		$this->load->view('includes/footer');
+	}
+	
 	public function cadastrarSite()
 	{
 		$this->load->view('includes/header');

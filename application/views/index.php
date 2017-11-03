@@ -8,15 +8,11 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?= base_url() ?>login">Login</a>
+                            <a class="nav-link js-scroll-trigger" href="<?= base_url() ?>paginas/login">Login</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?= base_url() ?>cadastro">Cadastro</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#painel">Painel</a>
+                            <a class="nav-link js-scroll-trigger" href="<?= base_url() ?>paginas/cadastro">Cadastro</a>
                         </li>
                         
                     </ul>

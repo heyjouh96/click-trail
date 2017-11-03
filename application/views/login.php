@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class= "nav-link glyphicon glyphicon-user" href="#" >Home <span class="sr-only">(current)</span></a>
+          <a class= "nav-link glyphicon glyphicon-user" href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="<?= base_url() ?>paginas/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cadastro</a>
+          <a class="nav-link" href="<?= base_url() ?>paginas/cadastro">Cadastro</a>
         </li>
       </ul>
     </div>
@@ -62,7 +62,7 @@
         		    
         		    <h2 class="text-center">Login</h2>
         		    
-        		    <form action="<?= base_url() ?>login/logar" method="post" name="login" class="login-form">
+        		    <form action="<?= base_url() ?>usuario/logar" method="post" name="login" class="login-form">
                           <div class="form-group">
                               <label for="email" class="text-uppercase">E-mail</label>
                               <input type="text" class="form-control" name="email" placeholder="Digite seu e-mail"> <br>

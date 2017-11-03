@@ -3,8 +3,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
 
-	public function login(){
+	public function logar(){
 	    
+	    $email = $this->input->post('email');
+	    $senha = $this->input->post('senha');
+	    
+	    $this->form_validation->set_rules('email', 'E-mail',	'trim|required');
+	    $this->form_validation->set_rules('senha', 'Senha', 	'trim|required');
+	    
+	    if($this->form_validation->run() == TRUE){
+	    	require_once APPPATH."models/Usuario_model.php";
+			$us = new UsuarioLogin($email, $senha);
+			
+			$this->load->model('insertdao');
+            $usdao = $this->insertdao;
+            if($usdao->get($us)){
+            	
+            	$this->session->set_userdata('logado', TRUE);
+            	$this->session->set_userdata('id', $usdao->get($us)->cd_Usuario);
+            	redirect('painel');
+            }
+            else{
+            	echo "n existe";
+            }
+            exit;
+			redirect('cadastro');
+	    }
 	}
 	
 	public function cadastrar(){
@@ -48,5 +72,7 @@ class Usuario extends CI_Controller {
 		}
 	    
 	}
+	
+	
 	
 }
