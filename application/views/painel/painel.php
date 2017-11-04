@@ -53,7 +53,7 @@
               <!-- mostra os sites cadastrados pelo usuário -->
               <?php foreach($sites as $s){ ?>
           
-                  <p> <a href="<?= base_url() ?>painel/siteInfo/<?= $s->cd_Site; ?>"> <?= $s->nm_Site; ?> <br> <small><?= $s->ds_Dominio ?></small> </a></p>
+                  <p> <a href="<?= base_url() ?>site/siteInfo/<?= $s->cd_Site; ?>"> <?= $s->nm_Site; ?> <br> <small><?= $s->ds_Dominio ?></small> </a></p>
               
               <?php } ?>    
             </li>

@@ -38,11 +38,11 @@ class Site extends CI_Controller {
 	
 	public function siteInfo($id){
 		
-		$this->load->model('Sitedao');
-	    $dados['info'] = $this->Sitedao->getSiteInfo($id);
-	    $dados['host'] = $this->Sitedao->getSiteHost($id);
+		$this->load->model('sitedao');
+	    $dados['info'] = $this->sitedao->getSiteInfo($id);
+	    $dados['host'] = $this->sitedao->getSiteDominio($id);
 	    // pega informação de cada item clicado (ds)
-	    $dados['itens'] = $this->Sitedao->getSiteItens($dados['host']);
+	    $dados['itens'] = $this->sitedao->getSiteItens($dados['host']);
 		
 	    $this->load->view('includes/header');
 		$this->load->view('painel/site_info', $dados);
@@ -62,22 +62,22 @@ class Site extends CI_Controller {
 		require_once APPPATH."models/Site_model.php";
         $site = new Plugin(0, $ds, $dominio, $semana, $mes);
 		
-		if($site->queryDominio() == null){
+		if($site->queryDominio($dominio) == null){
 	        $sitedao = $this->insertdao;
 	        $sitedao->insert($site);
 		}
 		else{
-			if($site->queryDs() == null){
+			if($site->queryDs($ds, $dominio) == null){
 				$sitedao = $this->insertdao;
 	        	$sitedao->insert($site);
 			}
 			else{
-				if($site->queryMes() == null){
+				if($site->queryMes($ds, $dominio, $mes) == null){
 					$sitedao = $this->insertdao;
 	        		$sitedao->insert($site);
 				}
 				else{
-					if($site->querySemana() == null){
+					if($site->querySemana($ds, $dominio, $mes, $semana) == null){
 						$sitedao = $this->insertdao;
 	        			$sitedao->insert($site);
 					}

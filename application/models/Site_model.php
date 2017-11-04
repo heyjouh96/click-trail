@@ -78,18 +78,18 @@
         
         // RETORNA QUERYs
         public function queryDominio($dominio){
-            return $this->db->query("SELECT * FROM clickcount WHERE dominio = '$dominio'")->result();
+            return $this->db->query("SELECT * FROM TB_ClickCount WHERE dominio = '$dominio'")->result();
         }
         
         public function queryDs($ds, $dominio){
-            return $this->db->query("SELECT * FROM clickcount WHERE ds = '$ds' AND dominio = '$dominio'")->result();
+            return $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio'")->result();
         }
         
         public function queryMes($ds, $dominio, $mes){
-            return $this->db->query("SELECT * FROM clickcount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m")->result();
+            return $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m")->result();
         }
         public function querySemana($ds, $dominio, $mes, $semana){
-            return $querySem = $this->db->query("SELECT * FROM clickcount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s")->result();
+            return $querySem = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s")->result();
         }
         
         public function toArray(){
