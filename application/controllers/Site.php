@@ -36,4 +36,58 @@ class Site extends CI_Controller {
 	    
 	}
 	
+	public function siteInfo($id){
+		
+		$this->load->model('Sitedao');
+	    $dados['info'] = $this->Sitedao->getSiteInfo($id);
+	    $dados['host'] = $this->Sitedao->getSiteHost($id);
+	    // pega informação de cada item clicado (ds)
+	    $dados['itens'] = $this->Sitedao->getSiteItens($dados['host']);
+		
+	    $this->load->view('includes/header');
+		$this->load->view('painel/site_info', $dados);
+		$this->load->view('includes/footer');
+	}
+	
+	public function getClick()
+	{
+		$this->load->model('insertdao');
+		
+		$ds = $this->input->post('ds');
+		$dominio = $this->input->post('dominio');
+		$semana = date('W');
+		$mes = date('n');
+		//$this->Painel_model->contaClick($this->input->post('id'), $this->input->post('host'), $semana, $mes);
+		
+		require_once APPPATH."models/Site_model.php";
+        $site = new Plugin(0, $ds, $dominio, $semana, $mes);
+		
+		if($site->queryDominio() == null){
+	        $sitedao = $this->insertdao;
+	        $sitedao->insert($site);
+		}
+		else{
+			if($site->queryDs() == null){
+				$sitedao = $this->insertdao;
+	        	$sitedao->insert($site);
+			}
+			else{
+				if($site->queryMes() == null){
+					$sitedao = $this->insertdao;
+	        		$sitedao->insert($site);
+				}
+				else{
+					if($site->querySemana() == null){
+						$sitedao = $this->insertdao;
+	        			$sitedao->insert($site);
+					}
+					else{
+						$sitedao = $this->insertdao;
+	        			$sitedao->update($site);
+					}
+				}
+			}
+		}
+	}
+	
 }

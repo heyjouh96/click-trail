@@ -7,33 +7,33 @@ class Painel_model extends CI_MODEL {
 	}
 	
 	public function contaClick($id, $host, $s, $m){
-	    $queryHOST = $this->db->query("SELECT * FROM clickcount WHERE host = '$host'")->result();
-        $queryID = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id' AND host = '$host'")->result();
-        $queryMes = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id' AND host = '$host' AND mes = $m")->result();
-        $querySem = $this->db->query("SELECT * FROM clickcount WHERE ds = '$id' AND host = '$host' AND mes = $m AND semana = $s")->result();
+	    $querydominio = $this->db->query("SELECT * FROM clickcount WHERE dominio = '$dominio'")->result();
+        $queryds = $this->db->query("SELECT * FROM clickcount WHERE ds = '$ds' AND dominio = '$dominio'")->result();
+        $queryMes = $this->db->query("SELECT * FROM clickcount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m")->result();
+        $querySem = $this->db->query("SELECT * FROM clickcount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s")->result();
         
-        if($queryHOST == null){
-            $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1,$s,$m)");
+        if($querydominio == null){
+            $this->db->query("INSERT INTO clickcount VALUES ('','$ds','$dominio',1,$s,$m)");
         }
         else{
-            if($queryID == null){
-                $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1,$s,$m)");
+            if($queryds == null){
+                $this->db->query("INSERT INTO clickcount VALUES ('','$ds','$dominio',1,$s,$m)");
             }
             else{
                 if($queryMes == null){
-                    $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1,$s,$m)");
+                    $this->db->query("INSERT INTO clickcount VALUES ('','$ds','$dominio',1,$s,$m)");
                 }
                 else{
                     if($querySem == null){
-                        $this->db->query("INSERT INTO clickcount VALUES ('','$id','$host',1,$s,$m)");
+                        $this->db->query("INSERT INTO clickcount VALUES ('','$ds','$dominio',1,$s,$m)");
                     }
                     else{
-                        $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$id' AND host = '$host' AND mes = $m AND semana = $s");       
+                        $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s");       
                     }
                 }
             }
         }
-
+        
     }
 	
 	public function getUsuario($id){

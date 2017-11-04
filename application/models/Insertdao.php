@@ -14,5 +14,9 @@ class InsertDAO extends CI_Model {
 		return $this->db->get_where("TB_".$us->getClassName(), array('ds_EmailUsuario' => $us->getEmail(), 'ds_SenhaUsuario' => $us->getSenha()))->row();
 	}
 	
+	public function update(Serianameable $us)
+	{
+		return $this->db->query("UPDATE clickcount SET qtd = qtd+1 WHERE ds = '".$us->getDs()."' AND dominio = '".$us->getDominio()."' AND mes = ".$us->getMes()." AND semana = ".$us->getSemana()." ");
+	}
 	
 }

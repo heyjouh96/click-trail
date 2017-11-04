@@ -11,14 +11,14 @@ function main(){
     });
     
     
-    function sendClick(id, host){
-        var novoId = id;
-        var novoHost = host;
+    function sendClick(ds, dominio){
+        var novoDs = ds;
+        var novoDominio = dominio;
         $.ajax({
             type: "POST",
             dataType: "json",
             url: "https://click-trail-wickedjhow.c9users.io/click-trail/painel/getclick",
-            data: {id: id, host: host}
+            data: {ds: ds, dominio: dominio}
         });
     }
     
