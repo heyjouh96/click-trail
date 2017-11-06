@@ -17,7 +17,7 @@ function main(){
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "https://click-trail-wickedjhow.c9users.io/click-trail/site/getclick",
+            url: "https://click-trail-wickedjhow.c9users.io/click-trail/site/getClick",
             data: {ds: ds, dominio: dominio}
         });
     }

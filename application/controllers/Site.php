@@ -62,22 +62,22 @@ class Site extends CI_Controller {
 		require_once APPPATH."models/Site_model.php";
         $site = new Plugin(0, $ds, $dominio, $semana, $mes);
 		
-		if($site->queryDominio($dominio) == null){
+		if($site->queryDominio() == null){
 	        $sitedao = $this->insertdao;
 	        $sitedao->insert($site);
 		}
 		else{
-			if($site->queryDs($ds, $dominio) == null){
+			if($site->queryDs() == null){
 				$sitedao = $this->insertdao;
 	        	$sitedao->insert($site);
 			}
 			else{
-				if($site->queryMes($ds, $dominio, $mes) == null){
+				if($site->queryMes() == null){
 					$sitedao = $this->insertdao;
 	        		$sitedao->insert($site);
 				}
 				else{
-					if($site->querySemana($ds, $dominio, $mes, $semana) == null){
+					if($site->querySemana() == null){
 						$sitedao = $this->insertdao;
 	        			$sitedao->insert($site);
 					}
