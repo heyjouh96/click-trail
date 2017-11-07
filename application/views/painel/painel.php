@@ -31,7 +31,7 @@
           <h2 pn>Painel</h2>
           <ul class="nav nav-pills flex-column">
             <li class="nav-item active">
-              <a href="#"><span class="username"> <?= $usuario->nm_Usuario; ?> </span></a>
+              <a href="#"><span class="username"> <?= $this->session->userdata('nome') ?> </span></a>
             </li>
             
             

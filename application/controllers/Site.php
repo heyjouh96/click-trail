@@ -43,8 +43,11 @@ class Site extends CI_Controller {
 	    $dados['host'] = $this->sitedao->getSiteDominio($id);
 	    // pega informação de cada item clicado (ds)
 	    $dados['itens'] = $this->sitedao->getSiteItens($dados['host']);
+	    $dados['esteMes'] =  $this->sitedao->esteMes($dados['host']);
+		
 		
 	    $this->load->view('includes/header');
+	    //$this->load->view('includes/menulateral');
 		$this->load->view('painel/site_info', $dados);
 		$this->load->view('includes/footer');
 	}
@@ -55,42 +58,13 @@ class Site extends CI_Controller {
 		
 		$ds = $this->input->post('ds');
 		$dominio = $this->input->post('dominio');
-		$semana = date('W');
 		$mes = date('n');
-		//$this->Painel_model->contaClick($this->input->post('id'), $this->input->post('host'), $semana, $mes);
+		$ano = date('Y');
 		
 		require_once APPPATH."models/Site_model.php";
         $this->load->model('sitedao');
         $sitedao = $this->sitedao;
-        $site = $sitedao->contaClick($ds, $dominio, $semana, $mes);
-        /*$site = new Plugin(0, $ds, $dominio, $semana, $mes);
-		
-		if($site->queryDominio() == null){
-	        $sitedao = $this->insertdao;
-	        $sitedao->insert($site);
-		}
-		else{
-			if($site->queryDs() == null){
-				$sitedao = $this->insertdao;
-	        	$sitedao->insert($site);
-			}
-			else{
-				if($site->queryMes() == null){
-					$sitedao = $this->insertdao;
-	        		$sitedao->insert($site);
-				}
-				else{
-					if($site->querySemana() == null){
-						$sitedao = $this->insertdao;
-	        			$sitedao->insert($site);
-					}
-					else{
-						$sitedao = $this->insertdao;
-	        			$sitedao->update($site);
-					}
-				}
-			}
-		}*/
+        $site = $sitedao->contaClick($ds, $dominio, $mes, $ano);
 	}
 	
 }

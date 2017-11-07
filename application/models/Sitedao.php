@@ -3,6 +3,13 @@
 require_once APPPATH."models/Serianameable.php";
 
 class SiteDAO extends CI_Model {
+	
+	public function getSites($id){
+        // Retorna todos os sites do usuário logado pelo seu ID.
+        $sites = $this->db->get_where('TB_Sites', array('cd_Usuario' => $id))->result();
+  
+        return $sites;
+	}
     
 	public function getSiteInfo($id){
         // Pega as informações do site pelo seu ds.
@@ -27,36 +34,36 @@ class SiteDAO extends CI_Model {
 		return $this->db->get_where('TB_ClickCount', array('dominio' => $dominio->ds_Dominio))->result();
 	}
 	
-	public function bySemana(Serianameable $site){
-		
-		$this->db->select('id, ds, dominio');
+	public function esteMes($dominio){
+		$this->db->select('id, ds, dominio, mes');
 		$this->db->select_sum('qtd');
-		
+		$this->db->group_by('ds');	
+		return $this->db->get_where('TB_ClickCount', array('dominio' => $dominio->ds_Dominio, 'mes' => date('n')))->result();
 	}
 	
-	public function contaClick($ds, $dominio, $s, $m){
+	public function contaClick($ds, $dominio, $m, $a){
 	    $querydominio = $this->db->query("SELECT * FROM TB_ClickCount WHERE dominio = '$dominio'")->result();
         $queryds = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio'")->result();
         $queryMes = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m")->result();
-        $querySem = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s")->result();
+        $queryAno = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND ano = $a")->result();
         
         if($querydominio == null){
-            $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+            $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$m,$a)");
         }
         else{
             if($queryds == null){
-                $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+                $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$m,$a)");
             }
             else{
                 if($queryMes == null){
-                    $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+                    $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$m,$a)");
                 }
                 else{
-                    if($querySem == null){
-                        $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+                    if($queryAno == null){
+                        $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$m,$a)");
                     }
                     else{
-                        $this->db->query("UPDATE TB_ClickCount SET qtd = qtd+1 WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s");       
+                        $this->db->query("UPDATE TB_ClickCount SET qtd = qtd+1 WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND ano = $a");       
                     }
                 }
             }

@@ -50,8 +50,29 @@
     
     <hr>
     
-    <a href="#">Esta Semana</a>
+    <!-- ESTE MÊS -->
+    <h1>Este Mes <small><?= date('F'); ?></small></h1>
+    
+    <h2>Visão Geral</h2>
+    
+    <?php foreach($esteMes as $em){ ?>
+        
+    <h3> <?= $em->ds ?> </h3>
+    <p>Total de clicks: <?= $em->qtd ?></p>
+        
+    <?php } ?>
     
     
+    
+    <h2>Porcentagem</h2>
+    
+    <?php foreach($esteMes as $em){ ?>
+        
+    <h3> <?= $em->ds ?> </h3>
+    <progress value="<?= $em->qtd ?>" max="<?= $info[0]->total ?>"></progress> <small><?= round(($em->qtd * 100)/$info[0]->total, 2) ?> %</small>
+        
+    <?php } ?>
+    
+    <hr>
     
 </div>

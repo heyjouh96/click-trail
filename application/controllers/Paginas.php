@@ -29,9 +29,28 @@ class Paginas extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 	
+	// PAINEL
+	public function painel(){
+		if($this->session->userdata('logado')){
+			$this->load->model('sitedao');
+			$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
+			
+			$this->load->view('includes/header');
+			//$this->load->view('includes/menulateral');
+			$this->load->view('painel/painel', $dados);
+			$this->load->view('includes/footer');
+		}
+		else{
+			$this->load->view('includes/header');
+			$this->load->view('login');
+			$this->load->view('includes/footer');
+		}
+	}
+	
 	public function cadastrarSite()
 	{
 		$this->load->view('includes/header');
+		//$this->load->view('includes/menulateral');
 		$this->load->view('painel/cadastrar_site');
 		$this->load->view('includes/footer');
 	}
