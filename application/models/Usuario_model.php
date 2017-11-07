@@ -54,37 +54,4 @@
         
     
     }
-    
-    class UsuarioLogin implements Serializablee, Nameable {
-    
-        private $email, $senha;
-        
-        public function __construct($email, $senha){
-            $this->email = $email;
-            $this->senha = $senha;
-        }
-        
-        // GETS
-        public function getEmail(){
-            return $this->email;
-        }
-        
-        public function getSenha(){
-            return $this->senha;
-        }
-        
-        public function toArray(){
-            $aux = array();
-            $aux["ds_EmailUsuario"] = $this->email;
-            $aux["ds_SenhaUsuario"] = $this->senha;
-            return $aux;
-        }
-        
-        public function getClassName(){
-            return "Usuarios";
-        }
-        
-    
-    }
-
 

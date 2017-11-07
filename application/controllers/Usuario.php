@@ -13,21 +13,23 @@ class Usuario extends CI_Controller {
 	    
 	    if($this->form_validation->run() == TRUE){
 	    	require_once APPPATH."models/Usuario_model.php";
-			$us = new UsuarioLogin($email, $senha);
-			
-			$this->load->model('insertdao');
-            $usdao = $this->insertdao;
-            if($usdao->get($us)){
-            	
-            	$this->session->set_userdata('logado', TRUE);
-            	$this->session->set_userdata('id', $usdao->get($us)->cd_Usuario);
-            	redirect('painel');
-            }
-            else{
-            	echo "n existe";
-            }
-            exit;
-			redirect('cadastro');
+	    	$this->load->model('usuariodao');
+	    	$usdao = $this->usuariodao;
+	    	$usuario = $usdao->getUsuario($email, $senha);
+	    	if(isset($usuario)){
+	    		$this->session->set_userdata("id", $usuario->getId());
+	    		$this->session->set_userdata("nome", $usuario->getNome());
+	    		$this->session->set_userdata("sbnome", $usuario->getSbnome());
+	    		$this->session->set_userdata("logado", TRUE);
+		    	redirect('painel','refresh');
+	    	}
+	    	else{
+	    		redirect('paginas/login', 'refresh');
+	    	}
+	    }
+	    else{
+	    	$this->session->set_userdata("msg", "Erroooou");
+	    	redirect('paginas/login', 'refresh');
 	    }
 	}
 	

@@ -60,7 +60,10 @@ class Site extends CI_Controller {
 		//$this->Painel_model->contaClick($this->input->post('id'), $this->input->post('host'), $semana, $mes);
 		
 		require_once APPPATH."models/Site_model.php";
-        $site = new Plugin(0, $ds, $dominio, $semana, $mes);
+        $this->load->model('sitedao');
+        $sitedao = $this->sitedao;
+        $site = $sitedao->contaClick($ds, $dominio, $semana, $mes);
+        /*$site = new Plugin(0, $ds, $dominio, $semana, $mes);
 		
 		if($site->queryDominio() == null){
 	        $sitedao = $this->insertdao;
@@ -87,7 +90,7 @@ class Site extends CI_Controller {
 					}
 				}
 			}
-		}
+		}*/
 	}
 	
 }

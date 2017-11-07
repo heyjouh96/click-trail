@@ -34,5 +34,35 @@ class SiteDAO extends CI_Model {
 		
 	}
 	
+	public function contaClick($ds, $dominio, $s, $m){
+	    $querydominio = $this->db->query("SELECT * FROM TB_ClickCount WHERE dominio = '$dominio'")->result();
+        $queryds = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio'")->result();
+        $queryMes = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m")->result();
+        $querySem = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s")->result();
+        
+        if($querydominio == null){
+            $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+        }
+        else{
+            if($queryds == null){
+                $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+            }
+            else{
+                if($queryMes == null){
+                    $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+                }
+                else{
+                    if($querySem == null){
+                        $this->db->query("INSERT INTO TB_ClickCount VALUES ('','$ds','$dominio',1,$s,$m)");
+                    }
+                    else{
+                        $this->db->query("UPDATE TB_ClickCount SET qtd = qtd+1 WHERE ds = '$ds' AND dominio = '$dominio' AND mes = $m AND semana = $s");       
+                    }
+                }
+            }
+        }
+        
+    }
+	
 	
 }
