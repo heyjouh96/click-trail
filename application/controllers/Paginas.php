@@ -34,6 +34,7 @@ class Paginas extends CI_Controller {
 		if($this->session->userdata('logado')){
 			$this->load->model('sitedao');
 			$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
+			$dados['active'] = 'inicial';
 			
 			$this->load->view('includes/header');
 			$this->load->view('includes/menupainel', $dados);
@@ -51,6 +52,7 @@ class Paginas extends CI_Controller {
 	{
 		$this->load->model('sitedao');
 		$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
+		$dados['active'] = 'cadastroSite';
 		
 		$this->load->view('includes/header');
 		$this->load->view('includes/menupainel', $dados);

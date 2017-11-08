@@ -1,8 +1,3 @@
-
-<div class="col-sm-8 col-md-8">
-
-  <div class="container-fluid">      
-      
       <!-- CADASTRO - MENSAGEM DE ERRO -->
       <?php if($this->session->flashdata('falhaCadastro')){ ?>
           <div class="alert alert-warning alert-dismissible show" role="alert">
@@ -42,5 +37,3 @@
           
       </form>
       
-  </div>
-</div>

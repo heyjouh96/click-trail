@@ -228,7 +228,7 @@ padding : 50px 0;
 /*PAINEL*/
 
 
-.username{
+.selected{
     font-size:16px;
     padding-top:10px;
     color:red;
@@ -239,6 +239,7 @@ padding : 50px 0;
     background: #0d172e;
     border-left: 5px solid #5584ff;
     padding-left: 15px;
+    color:red;
 }
 
 .navi a:hover{
@@ -296,8 +297,17 @@ font-size:16px;
 .navbar-brand{
     padding-right:22px; 
     border-right:red 2px solid;
+    font-size: 35px;
 }
 
 .well{
     float:right;
 }
+
+.info-site{
+    background: aqua;
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
