@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://click-trail-wickedjhow.c9users.io/click-trail/';
-//$config['base_url'] = 'https://click-trail-gustavo76.c9users.io/click-trail/';
+//$config['base_url'] = 'https://click-trail-wickedjhow.c9users.io/click-trail/';
+$config['base_url'] = 'https://click-trail-gustavo76.c9users.io/click-trail/';
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'portuguese-br';
 
 /*
 |--------------------------------------------------------------------------

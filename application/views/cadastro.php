@@ -19,30 +19,6 @@
     </div>
 </nav>
     
-
-<div class="container">
-    
-    <!-- CADASTRO - MENSAGEM DE ERRO -->
-    <?php if($this->session->flashdata('falhaCadastro')){ ?>
-        <div class="alert alert-warning alert-dismissible show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <?= $this->session->flashdata('falhaCadastro'); ?>
-        </div>
-    <?php } ?>
-    
-    <!-- CADASTRO - MENSAGEM DE SUCESSO -->
-    <?php if($this->session->flashdata('sucesCadastro')){ ?>
-        <div class="alert alert-success alert-dismissible show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <?= $this->session->flashdata('sucesCadastro'); ?>
-        </div>
-    <?php } ?>
-</div>
-    
     
     <!-- CADASTRO -->
     <section class="login-block">
@@ -50,6 +26,27 @@
           <div class="row">
               <div class="col-md-4 login-sec">
                   <h2 class="text-center">Fazer Cadastro</h2>
+                  
+                  <!-- CADASTRO - MENSAGEM DE ERRO -->
+                  <?php if($this->session->flashdata('falhaCadastro')){ ?>
+                      <div class="alert alert-warning alert-dismissible show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <?= $this->session->flashdata('falhaCadastro'); ?>
+                      </div>
+                  <?php } ?>
+                  
+                  <!-- CADASTRO - MENSAGEM DE SUCESSO -->
+                  <?php if($this->session->flashdata('sucesCadastro')){ ?>
+                      <div class="alert alert-success alert-dismissible show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <?= $this->session->flashdata('sucesCadastro'); ?>
+                      </div>
+                  <?php } ?>
+                  
                   <form action="<?= base_url() ?>usuario/cadastrar" method="post" name="cadastro" class="login-form">
                       
                       <div class="form-group">
@@ -77,10 +74,6 @@
                       </div>
                       
                       <div class="form-check">
-                          <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                              <small>Manter-me conectado</small>
-                            </label>
                           <button type="submit" class="btn btn-login float-right">Fazer Cadastro</button>
                       </div>
                   </form>

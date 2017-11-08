@@ -13,7 +13,7 @@ class Paginas extends CI_Controller {
 	public function login()
 	{
 		if($this->session->userdata('logado')){
-			redirect('painel');
+			redirect('paginas/painel');
 		}
 		else{
 			$this->load->view('includes/header');
@@ -36,7 +36,7 @@ class Paginas extends CI_Controller {
 			$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
 			
 			$this->load->view('includes/header');
-			//$this->load->view('includes/menulateral');
+			$this->load->view('includes/menupainel', $dados);
 			$this->load->view('painel/painel', $dados);
 			$this->load->view('includes/footer');
 		}
@@ -49,8 +49,11 @@ class Paginas extends CI_Controller {
 	
 	public function cadastrarSite()
 	{
+		$this->load->model('sitedao');
+		$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
+		
 		$this->load->view('includes/header');
-		//$this->load->view('includes/menulateral');
+		$this->load->view('includes/menupainel', $dados);
 		$this->load->view('painel/cadastrar_site');
 		$this->load->view('includes/footer');
 	}

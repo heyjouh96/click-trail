@@ -255,13 +255,33 @@ padding : 50px 0;
     display: block;
     font-size: 17px;
     font-weight: 500;
-    padding: 28px 20px;
+    padding: 18px 10px;
     text-decoration: none;
 }
 
 .side{
+    width:100%;
     background:#030321;
     color:#fff;
+    height:550px;
+    
+}
+
+.cont{
+    width:100%;
+    height:auto;
+    margin:10px;
+}
+
+.cont h2{
+    font-size:45px;
+    color:#030321;
+}
+
+.Domsquare{
+    background:indigo;
+    padding:50px;
+    height:50px;
 }
 
 /*MENU*/

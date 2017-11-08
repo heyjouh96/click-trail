@@ -44,10 +44,10 @@ class Site extends CI_Controller {
 	    // pega informação de cada item clicado (ds)
 	    $dados['itens'] = $this->sitedao->getSiteItens($dados['host']);
 	    $dados['esteMes'] =  $this->sitedao->esteMes($dados['host']);
-		
+		$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
 		
 	    $this->load->view('includes/header');
-	    //$this->load->view('includes/menulateral');
+	    $this->load->view('includes/menupainel', $dados);
 		$this->load->view('painel/site_info', $dados);
 		$this->load->view('includes/footer');
 	}

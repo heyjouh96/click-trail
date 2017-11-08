@@ -22,15 +22,7 @@
 
 <div class="container">
     
-    <!-- LOGIN - MENSAGEM DE ERRO -->
-    <?php if($this->session->flashdata('falhaLogin')){ ?>
-        <div class="alert alert-warning alert-dismissible show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <?= $this->session->flashdata('falhaLogin'); ?>
-        </div>
-    <?php } ?>
+    
 </div>    
 <!--Login
     <div class="container-fluid">
@@ -62,16 +54,26 @@
         		    
         		    <h2 class="text-center">Login</h2>
         		    
+        		    <!-- LOGIN - MENSAGEM DE ERRO -->
+                <?php if($this->session->flashdata('falhaLogin')){ ?>
+                    <div class="alert alert-warning alert-dismissible show" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <?= $this->session->flashdata('falhaLogin'); ?>
+                    </div>
+                <?php } ?>
+        		    
         		    <form action="<?= base_url() ?>usuario/logar" method="post" name="login" class="login-form">
                           <div class="form-group">
                               <label for="email" class="text-uppercase">E-mail</label>
-                              <input type="text" class="form-control" name="email" placeholder="Digite seu e-mail"> <br>
+                              <input type="text" class="form-control" name="email" placeholder="Digite seu e-mail" required> <br>
                             
                           </div>
                           
                           <div class="form-group">
                               <label for="senha" class="text-uppercase">Senha</label>
-                              <input type="password" class="form-control" name="senha" placeholder="Digite sua senha">
+                              <input type="password" class="form-control" name="senha" placeholder="Digite sua senha" required>
                           </div>
                       
                       
@@ -82,7 +84,9 @@
                                 </label>
                               <button type="submit" class="btn btn-login float-right">Fazer Login</button>
                           </div>
-                    </form>
+                    </form><br>
+                    
+                    
     		    </div>
     		    
         		<div class="col-md-8 banner-sec">

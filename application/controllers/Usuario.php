@@ -21,14 +21,14 @@ class Usuario extends CI_Controller {
 	    		$this->session->set_userdata("nome", $usuario->getNome());
 	    		$this->session->set_userdata("sbnome", $usuario->getSbnome());
 	    		$this->session->set_userdata("logado", TRUE);
-		    	redirect('painel','refresh');
+		    	redirect('paginas/painel','refresh');
 	    	}
 	    	else{
 	    		redirect('paginas/login', 'refresh');
 	    	}
 	    }
 	    else{
-	    	$this->session->set_userdata("msg", "Erroooou");
+	    	$this->session->set_flashdata("falhaLogin", "Usuário ou Senha incorretos!");
 	    	redirect('paginas/login', 'refresh');
 	    }
 	}
@@ -59,7 +59,7 @@ class Usuario extends CI_Controller {
 		    // VERIFICA SE AS SENHAS BATEM
 			if($senha1 != $senha2){
 				$this->session->set_flashdata('falhaCadastro','As senhas não conferem!');
-				redirect('cadastro');
+				redirect('paginas/cadastro');
 			}
 			else{
 			    require_once APPPATH."models/Usuario_model.php";
@@ -69,14 +69,14 @@ class Usuario extends CI_Controller {
                 $usdao = $this->insertdao;
                 $usdao->insert($us);
                 
-				$this->session->set_userdata("cadastro", "Cadastrado com Sucesso!");
-				redirect('cadastro');
+				$this->session->set_flashdata('sucesCadastro', "Cadastrado com Sucesso!");
+				redirect('paginas/cadastro');
 			}
 			
 		}
 		else{
 			$this->session->set_flashdata('falhaCadastro', $this->form_validation->error_string('',''));
-			redirect('cadastro');
+			redirect('paginas/cadastro');
 		}
 	    
 	}
