@@ -4,16 +4,32 @@ require_once APPPATH."models/Serianameable.php";
 
 class SiteDAO extends CI_Model {
 	
+	public function getSite($id){
+	    $site = $this->db->get_where('TB_Sites', array('cd_Site' => $id));
+	    require_once APPPATH."models/Site_model.php";
+	    if($site->num_rows() > 0){
+	        $s = $site->result()[0];
+	        $id = $s->cd_Site;
+	        $nome = $s->nm_Site;
+	        $dominio = $s->ds_Dominio;
+	        $idUs = $s->cd_Usuario;
+	        return new Site_model($id, $nome, $dominio, $idUs);
+	    }
+	    else{
+	        return null;
+	    }
+	}
+	
 	public function getSites($id){
         // Retorna todos os sites do usuário logado pelo seu ID.
         $sites = $this->db->get_where('TB_Sites', array('cd_Usuario' => $id))->result();
   
         return $sites;
 	}
-    
+	
 	public function getSiteInfo($id){
         // Pega as informações do site pelo seu ds.
-        $this->db->select('s.cd_Site, s.ds_Dominio');
+        $this->db->select('s.cd_Site, s.ds_Dominio, s.nm_Site');
         $this->db->select_sum('c.qtd', 'total');
         $this->db->join('TB_Usuarios AS u', 's.cd_Usuario = u.cd_Usuario');
         $this->db->join('TB_ClickCount AS c', 's.ds_Dominio = c.dominio');

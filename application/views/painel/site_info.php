@@ -2,9 +2,9 @@
     
 
 <div class="col-sm-8 col-md-8 col-lg-8">
-      <h1>Informações</h1>
+      <h1><?= $info[0]->nm_Site; ?></h1>
       
-      <p><b>Website: </b> <?= $info[0]->ds_Dominio; ?> </p>
+      <p><b>Domínio: </b> <?= $info[0]->ds_Dominio; ?> </p>
       <p><b>Total de Clicks: </b> <?= $info[0]->total; ?> </p>
       
       <h2>Visão Geral</h2>
