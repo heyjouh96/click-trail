@@ -1,5 +1,6 @@
 
-    
+        <?= $this->session->userdata('id') . " " . $this->session->userdata('nome') ?>
+        
   
         <h2>Domínios</h2>
           

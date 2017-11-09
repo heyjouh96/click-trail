@@ -43,18 +43,24 @@ class Site extends CI_Controller {
 		$sitedao = $this->sitedao;
 		$site = $sitedao->getSite($id);
 		if(isset($site)){
-		    $dados['info'] = $this->sitedao->getSiteInfo($site->getId());
-		    $dados['host'] = $this->sitedao->getSiteDominio($site->getId());
-		    // pega informação de cada item clicado (ds)
-		    $dados['itens'] = $this->sitedao->getSiteItens($dados['host']);
-		    $dados['esteMes'] =  $this->sitedao->esteMes($dados['host']);
-			$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
-			$dados['active'] = '';
-			
-		    $this->load->view('includes/header');
-		    $this->load->view('includes/menupainel', $dados);
-			$this->load->view('painel/site_info', $dados);
-			$this->load->view('includes/footer');
+			// verifica se o site pertence ao usuário logado
+			if($this->sitedao->auth($site->getId(), $this->session->userdata('id')) == true){
+				$dados['info'] = $this->sitedao->getSiteInfo($site->getId());
+			    $dados['host'] = $this->sitedao->getSiteDominio($site->getId());
+			    // pega informação de cada item clicado (ds)
+			    $dados['itens'] = $this->sitedao->getSiteItens($dados['host']);
+			    $dados['esteMes'] =  $this->sitedao->esteMes($dados['host']);
+				$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
+				$dados['active'] = '';
+				
+			    $this->load->view('includes/header');
+			    $this->load->view('includes/menupainel', $dados);
+				$this->load->view('painel/site_info', $dados);
+				$this->load->view('includes/footer');
+			}
+			else{
+		    	redirect('paginas/painel', 'refresh');
+			}
 		}
 		else{
 			redirect('paginas/painel', 'refresh');

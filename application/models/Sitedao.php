@@ -4,6 +4,21 @@ require_once APPPATH."models/Serianameable.php";
 
 class SiteDAO extends CI_Model {
 	
+	public function auth($idSite, $idUs){
+	    /* pega as informações do site que contenha o id "idSite" 
+	        e confere se o campo cd_Usuario bate com o "idUS" */
+	    $site = $this->db->get_where('TB_Sites', array('cd_Site' => $idSite));
+	    if($site->num_rows() > 0){
+	        $s = $site->result()[0];
+	        if($s->cd_Usuario == $idUs){
+	            return TRUE;
+	        }
+	        else{
+	            return FALSE;
+	        }
+	    }
+	}
+	
 	public function getSite($id){
 	    $site = $this->db->get_where('TB_Sites', array('cd_Site' => $id));
 	    require_once APPPATH."models/Site_model.php";
