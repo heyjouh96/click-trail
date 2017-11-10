@@ -287,15 +287,15 @@ padding : 50px 0;
 
 /*MENU*/
 .navbar{
-background-color: #030321;
-color:white;
-padding-bottom:35px;
-padding-top:20px;
-font-size:16px;
+    background-color: #030321;
+    color:white;
+    padding-bottom:35px;
+    padding-top:20px;
+    font-size:16px;
 }
 
 .navbar-brand{
-    padding-right:22px; 
+    padding-right:20px; 
     border-right:red 2px solid;
     font-size: 35px;
 }
@@ -303,11 +303,48 @@ font-size:16px;
 .well{
     float:right;
 }
+.usrNome{
+    float:right;
+}
 
-.info-site{
+.icone{
+    float:right;
+    margin-left:10px;
+}
+
+.iconeSmall{
+    padding:10px;
+}
+
+/*.info-site{
     background: aqua;
     margin: 5px;
     padding: 5px;
     box-sizing: border-box;
 }
+*/
 
+.info-site{
+    margin:10px 15px;
+    padding:40px 20px;
+    height:auto;
+    background:#DC0000;
+    border-radius:5px;
+    border-bottom:40px solid #BC0000;
+}
+
+
+.info-site a{
+    font-size:15px;
+    float:right;
+    margin:3px;
+}
+
+/*
+.ret{
+    background:#121260;
+    height:auto;
+    border-radius:2px;
+    width:100%;
+}
+*/
