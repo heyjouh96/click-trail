@@ -142,12 +142,12 @@ h2{
 
 
 .login-block{
-background: #030321;  /* fallback for old browsers */
-background: linear-gradient(to bottom, #030321, #191970);
-float:left;
-width:100%;
-height:auto;
-padding : 50px 0;
+    background: #030321;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #030321, #191970);
+    float:left;
+    width:100%;
+    height:auto;
+    padding : 50px 0;
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
 .container{
@@ -223,6 +223,10 @@ padding : 50px 0;
 }
 .banner-text p{
     color:#fff;
+}
+
+#olho{
+    padding:10px;
 }
 
 /*PAINEL*/
