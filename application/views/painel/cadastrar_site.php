@@ -1,3 +1,5 @@
+
+<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">   
       <!-- CADASTRO - MENSAGEM DE ERRO -->
       <?php if($this->session->flashdata('falhaCadastro')){ ?>
           <div class="alert alert-warning alert-dismissible show" role="alert">
@@ -36,4 +38,5 @@
           <input type="submit" value="Cadastrar">
           
       </form>
-      
+
+</main>
