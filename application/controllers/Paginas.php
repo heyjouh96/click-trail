@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Paginas extends CI_Controller {
-
+	
 	public function index()
 	{
 		$this->load->view('includes/header');
@@ -57,6 +57,15 @@ class Paginas extends CI_Controller {
 		$this->load->view('includes/header');
 		$this->load->view('includes/menupainel', $dados);
 		$this->load->view('painel/cadastrar_site');
+		$this->load->view('includes/footer');
+	}
+	
+	public function configurarConta(){
+		$dados['active'] = 'configurarConta';
+		
+		$this->load->view('includes/header');
+		$this->load->view('includes/menupainel', $dados);
+		$this->load->view('painel/configurar_conta');
 		$this->load->view('includes/footer');
 	}
 	

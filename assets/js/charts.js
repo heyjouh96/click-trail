@@ -118,7 +118,7 @@ function main(){
 			data: [{        
 				type: "line",       
 				dataPoints: [
-					{ y: 450 },
+					{ x: "Jan", y: 450},
 					{ y: 414},
 					{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
 					{ y: 460 },

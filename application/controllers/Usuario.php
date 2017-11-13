@@ -20,6 +20,7 @@ class Usuario extends CI_Controller {
 	    		$this->session->set_userdata("id", $usuario->getId());
 	    		$this->session->set_userdata("nome", $usuario->getNome());
 	    		$this->session->set_userdata("sbnome", $usuario->getSbnome());
+	    		$this->session->set_userdata("email", $usuario->getEmail());
 	    		$this->session->set_userdata("logado", TRUE);
 		    	redirect('paginas/painel','refresh');
 	    	}
@@ -49,8 +50,8 @@ class Usuario extends CI_Controller {
 	    $senha2 = $this->input->post('senha2');
 	    
 	    // DEFINE REGRAS
-	    $this->form_validation->set_rules('nome',	'Nome', 		'trim|max_length[20]|required');
-	    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'trim|max_length[50]|required');
+	    $this->form_validation->set_rules('nome',	'Nome', 		'max_length[20]|required');
+	    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'max_length[50]|required');
 	    $this->form_validation->set_rules('email',	'E-mail',		'trim|max_length[50]|required');
 	    $this->form_validation->set_rules('senha1', 'Senha',		'trim|max_length[20]|required');
 	    
@@ -79,6 +80,39 @@ class Usuario extends CI_Controller {
 			redirect('paginas/cadastro');
 		}
 	    
+	}
+	
+	public function trocarNome(){
+		
+		$nome = $this->input->post('nome');
+		
+		if(isset($nome)){
+			
+			$this->form_validation->set_rules('nome',	'Nome', 		'max_length[20]|required');
+		    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'max_length[50]|required');
+			
+			if($this->form_validation->run() == true){
+				require_once APPPATH."models/Usuario_model.php";
+			    $this->load->model('usuariodao');
+			    $usdao = $this->usuariodao;
+			    if($usdao->updateUsuario('nm_Usuario', $nome, $this->session->userdata('id')) == true){
+					$this->session->set_flashdata("sucesUpdate", "Nome Atualizado com sucesso!");
+			    	redirect('paginas/configurarConta', 'refresh');
+				}
+				else{
+					$this->session->set_flashdata("falhaUpdate", "Ocorreu um erro ao atualizar o nome");
+			    	redirect('paginas/configurarConta', 'refresh');
+				}
+			}
+			else{
+				$this->session->set_flashdata('falhaUpdate', $this->form_validation->error_string('',''));
+				redirect('paginas/configurarConta', 'refresh');
+			}
+		}
+		else{
+			redirect('paginas/configurarConta', 'refresh');
+		}
+		
 	}
 	
 	

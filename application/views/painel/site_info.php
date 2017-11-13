@@ -10,7 +10,7 @@
 				  	<p class="dominio"><?= $info[0]->ds_Dominio; ?> </p>
 				</div>
 				<div class="col-lg-3 ml-auto">
-					<p>Total de clicks</p>
+					<p>Total</p>
 	  				<h2><?= $info[0]->total; ?> Clicks</h2>
 				</div>
 		  	</div>
@@ -20,7 +20,7 @@
 	  	
 		
 		<div class="row">
-			<div class="col-lg-5 col-xs-12 panel">
+			<div class="col-lg-5 col-xs-12">
 				<h1>Visão Geral</h1>
 		
 					<?php foreach($itens as $i){ ?>
@@ -35,6 +35,17 @@
 						<progress value="<?= $i->qtd ?>" max="<?= $info[0]->total ?>"></progress> <small class='itemPct'><?= round(($i->qtd * 100)/$info[0]->total, 2) ?> %</small>
 					</div>  
 					<?php } ?>
+					
+					<h1>Este Mês <small><?= date('F'); ?></small></h1>
+					
+					<?php foreach($esteMes as $em){ ?>
+		  
+					<h3>  </h3>
+					<p> <b><?= $em->ds ?> :</b> <span><?= $em->qtd ?> </span> clicks </p>
+					  
+					<?php } ?>
+					
+					<a href="#">Conferir Meses anteriores</a>
 		    </div>
 		    
 			<div class="col-lg-6 col-xs-12 ml-auto panel">

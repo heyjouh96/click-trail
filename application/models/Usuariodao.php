@@ -25,6 +25,20 @@ class UsuarioDAO extends CI_Model {
 		}
 		
 	}
+	
+	public function updateUsuario($campo, $valor, $id){
+		
+		$this->db->set($campo, $valor);
+		$this->db->where('cd_Usuario', $id);
+		$query = $this->db->update('TB_Usuarios');
+		if($query){
+			return true;
+		}
+		else{
+			return null;
+		}
+		
+	}
 
 	
 	

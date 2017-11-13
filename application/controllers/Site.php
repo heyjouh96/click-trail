@@ -37,7 +37,7 @@ class Site extends CI_Controller {
 	}
 	
 	public function siteInfo($id){
-		
+
 		require_once APPPATH."models/Site_model.php";
 		$this->load->model('sitedao');
 		$sitedao = $this->sitedao;
