@@ -1,19 +1,27 @@
 
 <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-	<br>
   	
   	<div class="container">
-	  	<h1><?= $info[0]->nm_Site; ?> <br>
-	  		<small><?= $info[0]->ds_Dominio; ?> </small>
-	  	</h1>
+  		
+  		<div class="page-header">
+  			<div class="row">
+  				<div class="col-lg-7">
+				  	<h2><?= $info[0]->nm_Site; ?></h2>
+				  	<p class="dominio"><?= $info[0]->ds_Dominio; ?> </p>
+				</div>
+				<div class="col-lg-3 ml-auto">
+					<p>Total de clicks</p>
+	  				<h2><?= $info[0]->total; ?> Clicks</h2>
+				</div>
+		  	</div>
+		</div>
   	
   	
-	  	<p>Total de clicks</p>
-	  	<b><?= $info[0]->total; ?> Clicks</b>
+	  	
 		
 		<div class="row">
-			<div class="col-lg-6 col-xs-12 panel">
-				<h2>Visão Geral</h2>
+			<div class="col-lg-5 col-xs-12 panel">
+				<h1>Visão Geral</h1>
 		
 					<?php foreach($itens as $i){ ?>
 					  
@@ -28,7 +36,9 @@
 					</div>  
 					<?php } ?>
 		    </div>
-			<div class="col-lg-6 col-xs-12 panel">
+		    
+			<div class="col-lg-6 col-xs-12 ml-auto panel">
+				<h1>Gráfico</h1>
 				<button id="mostraPizza">Gráfico Pizza</button>
 				<button id="mostraBarras">Gráfico Barra</button>
 				<button id="mostraLinhas">Gráfico Linha</button>

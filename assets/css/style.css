@@ -150,10 +150,10 @@ h2{
     padding : 50px 0;
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+
 .container{
     background:#fff; 
     border-radius: 10px; 
-    box-shadow:15px 20px 0px rgba(0,0,0,0.1);
 }
 
 .login-sec{
@@ -265,10 +265,8 @@ h2{
 }
 
 .side{
-    width:100%;
     background: #122143;
     color:#fff;
-    height:550px;
     
 }
 
@@ -299,7 +297,7 @@ h2{
 .navbar-brand{
     padding-right:30px; 
     border-right:red 2px solid;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .well{
@@ -351,11 +349,16 @@ h2{
 }
 */
 
-h1 small{
+.dominio{
     color: #999;
     font-size: 20px;
+    font-weight: normal;
 }
 
 .panel{
     border: 1px solid #ddd;
+}
+
+h1{
+    border: none;
 }
