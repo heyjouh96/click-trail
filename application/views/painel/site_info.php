@@ -10,8 +10,7 @@
 				  	<p class="dominio"><?= $info[0]->ds_Dominio; ?> </p>
 				</div>
 				<div class="col-lg-3 ml-auto">
-					<p>Total</p>
-	  				<h2><?= $info[0]->total; ?> Clicks</h2>
+	  				<h2><small>Total:</small> <?= $info[0]->total; ?> Clicks</h2>
 				</div>
 		  	</div>
 		</div>
@@ -45,51 +44,47 @@
 					  
 					<?php } ?>
 					
-					<a href="#">Conferir Meses anteriores</a>
+					<a href="#" id="mostraMeses">Conferir Meses anteriores</a>
+					
 		    </div>
 		    
 			<div class="col-lg-6 col-xs-12 ml-auto panel">
 				<h1>Gráfico</h1>
 				<button id="mostraPizza">Gráfico Pizza</button>
 				<button id="mostraBarras">Gráfico Barra</button>
-				<button id="mostraLinhas">Gráfico Linha</button>
 				<div id="chartPie" style="height: 370px; width: 100%;"></div>
 				<div id="chartBar" style="height: 370px; width: 100%;"></div>
-				<div id="chartLine" style="height: 370px; width: 100%;"></div>
 			</div>
 		</div>
-		<!--
-		<hr> 
-		<h1>Este Mes <small><?= date('F'); ?></small></h1>
 		
-		<h2>Visão Geral</h2>
+		<div id="outrosMeses" style="display:none">
+			<h1>Meses Anteriores</h1>
+			
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+			sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+			magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+			quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+			ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+			dolor in hendrerit in vulputate velit esse molestie consequat,
+			vel illum dolore eu feugiat nulla facilisis at vero eros et
+			accumsan et iusto odio dignissim qui blandit praesent luptatum
+			zzril delenit augue duis dolore te feugait nulla facilisi.
+			Nam liber tempor cum soluta nobis eleifend option congue
+			nihil imperdiet doming id quod mazim placerat facer possim
+			assum. Typi non habent claritatem insitam; est usus legentis
+			in iis qui facit eorum claritatem. Investigationes
+			demonstraverunt lectores legere me lius quod ii legunt saepius.
+			Claritas est etiam processus dynamicus, qui sequitur mutationem
+			consuetudium lectorum. Mirum est notare quam littera gothica,
+			quam nunc putamus parum claram, anteposuerit litterarum formas
+			humanitatis per seacula quarta decima et quinta decima. Eodem
+			modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+			in futurum.</p>
+			
+			<div id="chartLine" style="height: 370px; width: 100%;"></div>
+		</div>
 		
-		<?php foreach($esteMes as $em){ ?>
-		  
-		<h3> <?= $em->ds ?> </h3>
-		<p>Total de clicks: <?= $em->qtd ?></p>
-		  
-		<?php } ?>
-		
-		
-		
-		<h2>Porcentagem</h2>
-		
-		<?php foreach($esteMes as $em){ ?>
-		  
-		<h3> <?= $em->ds ?> </h3>
-		<progress value="<?= $em->qtd ?>" max="<?= $info[0]->total ?>"></progress> <small><?= round(($em->qtd * 100)/$info[0]->total, 2) ?> %</small>
-		  
-		<?php } ?>
-		
-		<hr> 
-		
-		-->
 	</div>
 	
 </main>
 	
-
-
-<!--
--->

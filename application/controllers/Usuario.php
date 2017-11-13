@@ -82,12 +82,30 @@ class Usuario extends CI_Controller {
 	    
 	}
 	
-	public function trocarNome(){
+	public function confirmarSenha($senha, $btn){
 		
+		echo $senha;
+		
+		exit;
+		require_once APPPATH."models/Usuario_model.php";
+    	$this->load->model('usuariodao');
+    	$usdao = $this->usuariodao;
+    	$usuario = $usdao->getUsuario($this->session->userdata('email'), $this->input->post('senha'));
+    	if(isset($usuario)){
+    		if($this->input->post('senha') == $usuario->getSenha()){
+    			
+    		}
+    		else{
+    			return FALSE;
+    		}
+    	}
+	}
+	
+	
+	public function trocarNome(){
 		$nome = $this->input->post('nome');
 		
 		if(isset($nome)){
-			
 			$this->form_validation->set_rules('nome',	'Nome', 		'max_length[20]|required');
 		    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'max_length[50]|required');
 			
@@ -114,6 +132,8 @@ class Usuario extends CI_Controller {
 		}
 		
 	}
+	
+	
 	
 	
 	

@@ -1,5 +1,6 @@
 window.onload = main();
 window.onload = mostraPizza();
+window.onload = mostraLinhas();
 
 function mostraPizza(){	
 	$('#chartBar, #chartLine').css('display', 'none');
@@ -48,9 +49,46 @@ function explodePie (e) {
 
 }
 
+
+
 function main(){
 	
-	$('#chartBar, #chartLine').css('display', 'none');
+	$('#mostraMeses').click(function(e){
+		
+		$('#outrosMeses').css('display','block');
+		$('#chartLine').css('display', 'block');
+		
+		var chart = new CanvasJS.Chart("chartLine", {
+			animationEnabled: true,
+			theme: "light2",
+			title:{
+				text: "Simple Line Chart"
+			},
+			axisY:{
+				includeZero: false
+			},
+			data: [{        
+				type: "line",       
+				dataPoints: [
+					{ x: "Jan", y: 450},
+					{ y: 414},
+					{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+					{ y: 460 },
+					{ y: 450 },
+					{ y: 500 },
+					{ y: 480 },
+					{ y: 480 },
+					{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+					{ y: 500 },
+					{ y: 480 },
+					{ y: 510 }
+				]
+			}]
+		});
+		chart.render();
+	});
+	
+	$('#chartBar').css('display', 'none');
 	
 	// PIZZA
 	$('#mostraPizza').click(function(e){
@@ -101,39 +139,6 @@ function main(){
 	
 	// LINHA
 	
-	$('#mostraLinhas').click(function(e){
-		
-		$('#chartPie, #chartBar').css('display', 'none');
-		$('#chartLine').css('display', 'block');
-		
-		var chart = new CanvasJS.Chart("chartLine", {
-			animationEnabled: true,
-			theme: "light2",
-			title:{
-				text: "Simple Line Chart"
-			},
-			axisY:{
-				includeZero: false
-			},
-			data: [{        
-				type: "line",       
-				dataPoints: [
-					{ x: "Jan", y: 450},
-					{ y: 414},
-					{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-					{ y: 460 },
-					{ y: 450 },
-					{ y: 500 },
-					{ y: 480 },
-					{ y: 480 },
-					{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-					{ y: 500 },
-					{ y: 480 },
-					{ y: 510 }
-				]
-			}]
-		});
-		chart.render();
-	});
+	
 	
 }

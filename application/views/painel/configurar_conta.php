@@ -30,7 +30,7 @@
 		
 		<div class="col-lg-6 col-xs-12">
 		    
-    		<form action="<?= base_url() ?>usuario/trocarNome" method="post">
+    		<!--<form action="<?= base_url() ?>usuario/trocarNome" method="post">-->
     		    <div class="row">
                     <div class="form-group col-lg-6 col-xs-12">
                         <label for="nome">Nome</label>
@@ -41,8 +41,8 @@
                         <input type="text" class="form-control" name="sbnome" value="<?= $this->session->userdata('sbnome') ?>" required> 
                     </div>
                 </div>
-              <button type="submit" class="btn btn-primary">Alterar Nome</button>
-            </form>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="trocarNome">Alterar Nome</button>
+            <!--</form>-->
 		    <hr>
 		    
 		    <form action="<?= base_url() ?>#" method="post">
@@ -82,11 +82,30 @@
 		    
 		</div>
 		
+		<!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Digite sua Senha</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <input type="password" name="confsenha" class="form-control"/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmaSenha" itemprop="">Salvar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 	</div>
 	
 </main>
-	
-
 
 <!--
 -->
