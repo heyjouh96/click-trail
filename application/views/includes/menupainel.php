@@ -22,17 +22,18 @@
           <ul class="nav nav-pills flex-column">
             
             <li class="nav-item <?php if($active == 'inicial'){ echo 'active';} ?>">
-              <a href="<?= base_url() ?>paginas/painel">Inicial</a>
+              <a href="<?= base_url() ?>paginas/painel"> <span><i class="icono-home"></i></span>Inicial</a>
             </li>
             <li class="nav-item <?php if($active == 'cadastroSite'){ echo 'active';} ?>">
-              <a class="nav-link" href="<?= base_url() ?>paginas/cadastrarSite">Cadastrar novo Site</a>
+              <a class="nav-link" href="<?= base_url() ?>paginas/cadastrarSite"> <span><i class="icono-plus"></i></span>Cadastrar novo Site</a>
             </li>
             <li class="nav-item <?php if($active == 'configurarConta'){ echo 'active';} ?>">
-              <a class="nav-link" href="<?= base_url() ?>paginas/configurarConta">Configurações</a>
+              
+              <a class="nav-link" href="<?= base_url() ?>paginas/configurarConta"><span><i class="icono-gear"></i></span>Configurações</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url() ?>usuario/logout">Sair</a>
+              <a class="nav-link" href="<?= base_url() ?>usuario/logout"><span><i class="icono-signOut"></i></span>Sair</a>
             </li>
           </ul>
-          <button class="btn btn-lg btn-outline-success my-2 my-sm-0 ml-sm-2" type="submit">Seja Premium</button>
+          <button class="btn btn-lg btn-outline-warning my-2 my-sm-0 ml-sm-2" type="submit">Seja Premium</button>
         </nav>

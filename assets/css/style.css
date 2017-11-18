@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
 
 /*DIVS PRINCIPAIS*/
 #info,#download,#about-us{
@@ -231,7 +232,6 @@ h2{
 
 /*PAINEL*/
 
-
 .selected{
     font-size:16px;
     padding-top:10px;
@@ -281,12 +281,41 @@ h2{
     color:#030321;
 }
 
-.Domsquare{
-    background:indigo;
-    padding:50px;
-    height:50px;
+.info-site{
+    margin:20px 15px;
+    padding:7px 5px;
+    height:auto;
+    background:#DC0000;
+    border-radius:5px;
 }
 
+.info-site2{
+    width:100%;
+    padding:12px 20px;
+    height:auto;
+    background:#BC0000;
+    
+}
+
+.info-site a{
+    font-size:15px;
+    float:right;
+    color:#FFF;
+    
+}
+
+.info-site a:hover{
+    text-decoration:none;
+    color:#DDD;
+}
+
+.info-site span{
+    margin:10px;
+}
+
+.info-site small{
+    margin:10px;
+}
 /*MENU*/
 .navbar{
     background-color: #122143;
@@ -312,9 +341,8 @@ h2{
     margin-left:10px;
 }
 
-.iconeSmall{
-    padding:5px;
-    margin:3px;
+.icono-flag{
+    padding:20px;
 }
 
 /*.info-site{
@@ -325,21 +353,6 @@ h2{
 }
 */
 
-.info-site{
-    margin:10px 15px;
-    padding:40px 20px;
-    height:auto;
-    background:#DC0000;
-    border-radius:5px;
-    border-bottom:40px solid #BC0000;
-}
-
-
-.info-site a{
-    font-size:15px;
-    float:right;
-    margin:3px;
-}
 
 /*
 .ret{
@@ -350,15 +363,10 @@ h2{
 }
 */
 
-.dominio{
-    color: #999;
-    font-size: 20px;
-    font-weight: normal;
+.fundo{
+    background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
 }
 
-.panel{
-    border: 1px solid #ddd;
-}
 
 h1{
     border: none;
@@ -367,3 +375,32 @@ h1{
 p{
     font-weight: normal !important;
 }
+
+/*SITE INFO*/
+
+.dominio{
+    color: #999;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Merriweather', serif;
+}
+
+.panel{
+    border: 3px solid #ddd;
+    border-top:30px solid #ddd;
+    border-radius:15px;
+    padding:25px;
+}
+
+.info-clicks{
+    font-weight:4px;
+    margin:2px;
+    
+}
+.btn{
+    padding:10px;
+}
+span{
+    padding:4px;
+}
+

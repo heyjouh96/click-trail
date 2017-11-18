@@ -1,16 +1,16 @@
 
-<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3 fundo">
   	
-  	<div class="container">
+  	<div class="container fundo">
   		
   		<div class="page-header">
   			<div class="row">
   				<div class="col-lg-7">
-				  	<h2><?= $info[0]->nm_Site; ?></h2>
+				  	<h2 class="username"><?= $info[0]->nm_Site; ?></h2>
 				  	<p class="dominio"><?= $info[0]->ds_Dominio; ?> </p>
 				</div>
 				<div class="col-lg-3 ml-auto">
-	  				<h2><small>Total:</small> <?= $info[0]->total; ?> Clicks</h2>
+	  				<h2 class="info-clicks"><small>Total:</small> <?= $info[0]->total; ?> Clicks</h2>
 				</div>
 		  	</div>
 		</div>
@@ -50,8 +50,8 @@
 		    
 			<div class="col-lg-6 col-xs-12 ml-auto panel">
 				<h1>Gráfico</h1>
-				<button id="mostraPizza">Gráfico Pizza</button>
-				<button id="mostraBarras">Gráfico Barra</button>
+				<button class="btn btn-dark" id="mostraPizza"><span><i class="icono-pieChart"></i></span>Gráfico Pizza</button>
+				<button class="btn btn-dark" id="mostraBarras"><span><i class="icono-barChart"></i></span>Gráfico Barra</button>
 				<div id="chartPie" style="height: 370px; width: 100%;"></div>
 				<div id="chartBar" style="height: 370px; width: 100%;"></div>
 			</div>
