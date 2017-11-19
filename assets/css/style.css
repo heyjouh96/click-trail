@@ -404,3 +404,37 @@ span{
     padding:4px;
 }
 
+/*CADASTRAR SITE*/
+.addsite{
+    width:100%;
+    border-radius:10px;
+    padidng:10px;
+}
+.addsite form{
+    width:100%;
+    background:#030321;
+    border-radius:10px;
+    padding:10px;
+}
+.addsite label{
+    color:white;
+    margin:5px;
+    
+}
+.addsite h2{
+    color:white;
+    padding:10px;
+    margin:5px;
+}
+
+.form-control{
+    border:none;
+}
+.form-style{
+    background:#030321;
+    padding:30px
+    
+}
+.addsite h1{
+    color:white;
+}
