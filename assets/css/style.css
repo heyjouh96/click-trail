@@ -371,6 +371,7 @@ h2{
 
 h1{
     border: none;
+    text-decoration:none;
 }
 
 p{
@@ -383,20 +384,23 @@ p{
     color: #999;
     font-size: 20px;
     font-weight: normal;
-    font-family: 'Merriweather', serif;
 }
 
+.item-style p{
+    padding:7px;
+    font-size:19px;
+}
 .panel{
-    border: 3px solid #ddd;
-    border-top:30px solid #ddd;
+    border: 3px solid #6A5ACD;
+    border-top:30px solid #6A5ACD;
     border-radius:15px;
     padding:25px;
 }
 
+
 .info-clicks{
-    font-weight:4px;
-    margin:2px;
-    
+    width:100%;
+    color:#696969;
 }
 .btn{
     padding:10px;
@@ -410,6 +414,10 @@ button a{
 button a:hover{
     color:#CCC;
     text-decoration:none;
+}
+
+.icono-mouse{
+    background:#999999;
 }
 
 /*CADASTRAR SITE*/

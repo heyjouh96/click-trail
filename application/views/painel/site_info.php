@@ -9,8 +9,11 @@
 				  	<h2 class="username"><?= $info[0]->nm_Site; ?></h2>
 				  	<p class="dominio"><?= $info[0]->ds_Dominio; ?> </p>
 				</div>
-				<div class="col-lg-3 ml-auto">
-	  				<h2 class="info-clicks"><small>Total:</small> <?= $info[0]->total; ?> Clicks</h2>
+				<div class="col-lg-4 ml-auto">
+					<br>
+					
+	  				<h2 class="info-clicks"><span><i class="icono-mouse"></i></span><small>Total:</small> <?= $info[0]->total; ?> Clicks</h2>
+	  				
 				</div>
 		  	</div>
 		</div>
@@ -19,9 +22,9 @@
 	  	
 		
 		<div class="row">
-			<div class="col-lg-5 col-xs-12">
+			<div class="col-lg-5 col-xs-12 item-style">
 				<h1>Visão Geral</h1>
-		
+				<hr>
 					<?php foreach($itens as $i){ ?>
 					  
 					<p> <b class="itemDs"><?= $i->ds ?></b> : <span class="itemQtd"><?= $i->qtd ?></span> clicks <p>
@@ -36,7 +39,7 @@
 					<?php } ?>
 					
 					<h1>Este Mês <small><?= date('F'); ?></small></h1>
-					
+					<hr>
 					<?php foreach($esteMes as $em){ ?>
 		  
 					<h3>  </h3>
@@ -51,6 +54,7 @@
 		    
 			<div class="col-lg-6 col-xs-12 ml-auto panel">
 				<h1>Gráfico</h1>
+				<hr>
 				<button class="btn btn-dark" id="mostraPizza"><span><i class="icono-pieChart"></i></span>Gráfico Pizza</button>
 				<button class="btn btn-dark" id="mostraBarras"><span><i class="icono-barChart"></i></span>Gráfico Barra</button>
 				<div id="chartPie" style="height: 370px; width: 100%;"></div>
