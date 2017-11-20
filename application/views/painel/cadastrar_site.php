@@ -1,5 +1,5 @@
 
-<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3 login-block">   
+<main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3 ">   
       <!-- CADASTRO - MENSAGEM DE ERRO -->
       <?php if($this->session->flashdata('falhaCadastro')){ ?>
           <div class="alert alert-warning alert-dismissible show" role="alert">
@@ -29,7 +29,7 @@
               
               
               
-              <form action="<?= base_url() ?>site/cadastrar" method="post" name="cadastro" class="form-control">
+              <form action="<?= base_url() ?>site/cadastrar" method="post" name="cadastro">
                 <h2 class="text-center">Novo Site</h2>
                   <div class="form-group">
                     <label for="nome" class="col-form-label">Nome do Site</label> <br>

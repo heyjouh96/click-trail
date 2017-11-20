@@ -321,6 +321,7 @@ h2{
     background-color: #122143;
     color:white;
     font-size:16px;
+    border-top:5px solid #6A5ACD;
 }
 
 .navbar-brand{
@@ -403,6 +404,13 @@ p{
 span{
     padding:4px;
 }
+button a{
+    color:#FFF;
+}
+button a:hover{
+    color:#CCC;
+    text-decoration:none;
+}
 
 /*CADASTRAR SITE*/
 .addsite{
@@ -423,18 +431,36 @@ span{
 }
 .addsite h2{
     color:white;
-    padding:10px;
-    margin:5px;
+    padding:7px;
+    
 }
 
-.form-control{
-    border:none;
-}
 .form-style{
     background:#030321;
     padding:30px
     
 }
-.addsite h1{
-    color:white;
+/*CONFIGURAÇÕES*/
+.form-setting label{
+    font-size:16px;
+    margin:2px;
+}
+.b-effect{
+    font-size:20px;
+    color:#696969;
+}
+
+.form-setting input{
+    background:#483D8B;
+    color:#FFF;
+    margin:5px;
+    border:2px solid #6A5ACD;
+}
+hr{
+    border-top:5px solid #6A5ACD;
+    background:#483D8B;
+}
+.hr-style{
+       border-top:5px solid #191970;
+    
 }

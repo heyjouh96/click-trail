@@ -43,9 +43,10 @@
 					<p> <b><?= $em->ds ?> :</b> <span><?= $em->qtd ?> </span> clicks </p>
 					  
 					<?php } ?>
-					
-					<a href="#" id="mostraMeses">Conferir Meses anteriores</a>
-					
+					<button class="btn btn-dark">
+						<span><i class="icono-calendar"></i></span>
+						<a href="#" id="mostraMeses">Conferir Meses anteriores</a>
+					</button>
 		    </div>
 		    
 			<div class="col-lg-6 col-xs-12 ml-auto panel">

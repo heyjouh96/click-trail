@@ -23,6 +23,7 @@
             
             <li class="nav-item <?php if($active == 'inicial'){ echo 'active';} ?>">
               <a href="<?= base_url() ?>paginas/painel"> <span><i class="icono-home"></i></span>Inicial</a>
+              
             </li>
             <li class="nav-item <?php if($active == 'cadastroSite'){ echo 'active';} ?>">
               <a class="nav-link" href="<?= base_url() ?>paginas/cadastrarSite"> <span><i class="icono-plus"></i></span>Cadastrar novo Site</a>
@@ -36,4 +37,7 @@
             </li>
           </ul>
           <button class="btn btn-lg btn-outline-warning my-2 my-sm-0 ml-sm-2" type="submit">Seja Premium</button>
+          
         </nav>
+        
+        
