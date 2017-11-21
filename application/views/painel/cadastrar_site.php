@@ -39,7 +39,7 @@
                   <div class="form-group">
                     <label for="dominio" class="col-form-label">Domínio</label>
                     <input type="text" name="dominio" placeholder="Digite o domínio do seu Website" class="form-control">
-                    <small class="form-text text-muted">Ex: www.clicktrail.com.br</small>
+                    <small class="form-text text-muted">Ex: clicktrail.com.br</small>
                   </div>
                   
                   <input type="submit" value="Cadastrar" class="btn btn-danger">
