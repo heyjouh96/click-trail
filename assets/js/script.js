@@ -1,4 +1,4 @@
-window.onload = main();
+/*window.onload = main();
 
 function main(){
     
@@ -30,4 +30,4 @@ function main(){
     
     
     
-}
+}*/

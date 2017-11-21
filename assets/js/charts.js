@@ -1,6 +1,5 @@
 window.onload = main();
 window.onload = mostraPizza();
-window.onload = mostraLinhas();
 
 function mostraPizza(){	
 	$('#chartBar, #chartLine').css('display', 'none');

@@ -40,6 +40,16 @@ class UsuarioDAO extends CI_Model {
 		
 	}
 
-	
+	public function confirmaSenha($senha, $id){
+		$this->db->where('cd_Usuario', $id);
+		$this->db->where('ds_SenhaUsuario', $senha);
+		$us = $this->db->get('TB_Usuarios');
+		if($us->num_rows() > 0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 	
 }

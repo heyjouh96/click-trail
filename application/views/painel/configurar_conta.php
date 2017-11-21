@@ -4,8 +4,9 @@
   	<div class="container">
   		
   		<!-- ERRO AO FAZER UPDATE -->
+  		<br>
       <?php if($this->session->flashdata('falhaUpdate')){ ?>
-          <div class="alert alert-warning alert-dismissible show" role="alert">
+          <div class="alert alert-danger alert-dismissible show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -28,81 +29,125 @@
 		<b class="b-effect"><?= $this->session->userdata('nome') . " " . $this->session->userdata('sbnome') ?></b>
 		<hr>
 		
-		<div class="col-lg-6 col-xs-12 form-setting">
+
 		    
-    		<!--<form action="<?= base_url() ?>usuario/trocarNome" method="post">-->
-    		    <div class="row form-setting">
-                    <div class="form-group col-lg-6 col-xs-12">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" value="<?= $this->session->userdata('nome') ?>" required>
-                    </div>
-                    <div class="form-group col-lg-6 col-xs-12">
-                        <label for="sbnome">Sobrenome</label>
-                        <input type="text" class="form-control" name="sbnome" value="<?= $this->session->userdata('sbnome') ?>" required> 
-                    </div>
-                </div>
-              <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal" id="trocarNome">Alterar Nome</button>
-            <!--</form>-->
-		    
-		    
-		    <form action="<?= base_url() ?>#" method="post">
-		        <div class="row form-setting">
-                    <div class="form-group col-lg-6 col-xs-12">
-                        <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" value="<?= $this->session->userdata('email') ?>">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-outline-danger">Alterar E-mail</button>
-            </form>
-		    <hr class="hr-style">
-		    
-		    <b class="b-effect">Alterar Senha</b>
-		    <form action="<?= base_url() ?>#" method="post">
-		        <div class="row form-setting">
-                    <div class="form-group col-lg-6 col-xs-12">
-                        <label for="senhaold">Senha Antiga</label>
-                        <input type="password" class="form-control" id="senhaold">
-                    </div>
-                </div>
-                <div class="row form-setting">
-                    <div class="form-group col-lg-6 col-xs-12">
-                        <label for="senhanew1">Senha Nova</label>
-                        <input type="password" class="form-control" id="senhanew1">
-                    </div>
-                </div>
-                <div class="row form-setting">
-                    <div class="form-group col-lg-6 col-xs-12">
-                        <label for="senhanew2">Confirmar Senha Nova</label>
-                        <input type="password" class="form-control" id="senhanew2">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-outline-danger">Alterar Senha</button>
-            </form>
-	
-		    
-		</div>
-		
-		<!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Digite sua Senha</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+      <!-- TROCA NOME -->
+      <b class="b-effect">Alterar Nome</b>
+	    <div class="row form-setting">
+        <div class="form-group col-lg-6 col-xs-12">
+            <input type="text" class="form-control" name="nome" value="<?= $this->session->userdata('nome') ?>" disabled>
+        </div>
+        <div class="form-group col-lg-6 col-xs-12">
+            <input type="text" class="form-control" name="sbnome" value="<?= $this->session->userdata('sbnome') ?>" disabled> 
+        </div>
+        <button type="button" class="btn btn-outline-danger ml-2" data-toggle="modal" data-target="#nomeModal">Alterar</button>
+      </div>
+      <hr class="hr-style">
+      
+      <!-- TROCA E-MAIL -->
+      <b class="b-effect">Alterar E-mail</b>
+      <div class="row form-setting">
+        <div class="form-group col-lg-6 col-xs-12">
+            <input type="email" class="form-control" id="email" value="<?= $this->session->userdata('email') ?>" disabled> <br>
+            <button type="submit" class="btn btn-outline-danger" data-toggle="modal" data-target="#emailModal">Alterar</button>
+        </div>
+      </div>
+		  
+		  <!-- TROCA SENHA -->
+		  <hr class="hr-style">
+      <b class="b-effect">Alterar Senha</b><br><br>
+      <button type="submit" class="btn btn-outline-danger">Alterar</button>
+
+		<!-- Modal Troca Nome -->
+    <div class="modal fade" id="nomeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Trocar Nome</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?= base_url() ?>usuario/configurarConta" method="post">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="nome">Novo Nome</label>
+                <input type="text" class="form-control" name="nome" value="<?= $this->session->userdata('nome') ?>" required>
               </div>
-              <div class="modal-body">
-                <input type="password" name="confsenha" class="form-control"/>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" id="confirmaSenha" itemprop="">Salvar</button>
+              <div class="form-group">
+                <label for="confSenha">Digite sua Senha</label>
+                <input type="password" name="confSenha" class="form-control" required/>
               </div>
             </div>
-          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <input type="submit" class="btn btn-primary" value="Salvar">
+            </div>
+          </form>
         </div>
-        
+      </div>
+    </div>
+    
+    <!-- Modal Troca E-mail -->
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Trocar E-mail</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?= base_url() ?>usuario/configurarConta" method="post">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="email">Novo E-mail</label>
+                <input type="text" class="form-control" name="email" value="<?= $this->session->userdata('email') ?>" required>
+              </div>
+              <div class="form-group">
+                <label for="confSenha">Digite sua Senha</label>
+                <input type="password" name="confSenha" class="form-control" required/>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <input type="submit" class="btn btn-primary" value="Salvar">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal Troca Senha -->
+    <div class="modal fade" id="senhaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Trocar Senha</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?= base_url() ?>usuario/configurarConta" method="post">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="senha">Nova Senha</label>
+                <input type="password" class="form-control" name="senha" required>
+              </div>
+              <div class="form-group">
+                <label for="confSenha">Digite sua Senha Atual</label>
+                <input type="password" name="confSenha" class="form-control" required/>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <input type="submit" class="btn btn-primary" value="Salvar">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
 	</div>
 	
 </main>

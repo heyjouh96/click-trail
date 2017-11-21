@@ -4,9 +4,6 @@ function main(){
     
     $(".click-solo").click(function(e){
         alert(e.currentTarget.id);
-        alert(location.hostname);
-        //console.log(e);
-        //alert(window.location.href);
         sendClick(e.currentTarget.id, location.hostname);
     });
     

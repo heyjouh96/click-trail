@@ -102,34 +102,53 @@ class Usuario extends CI_Controller {
 	}
 	
 	
-	public function trocarNome(){
-		$nome = $this->input->post('nome');
+	public function configurarConta(){
 		
-		if(isset($nome)){
-			$this->form_validation->set_rules('nome',	'Nome', 		'max_length[20]|required');
-		    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'max_length[50]|required');
-			
-			if($this->form_validation->run() == true){
-				require_once APPPATH."models/Usuario_model.php";
-			    $this->load->model('usuariodao');
-			    $usdao = $this->usuariodao;
-			    if($usdao->updateUsuario('nm_Usuario', $nome, $this->session->userdata('id')) == true){
-					$this->session->set_flashdata("sucesUpdate", "Nome Atualizado com sucesso!");
-			    	redirect('paginas/configurarConta', 'refresh');
-				}
-				else{
-					$this->session->set_flashdata("falhaUpdate", "Ocorreu um erro ao atualizar o nome");
-			    	redirect('paginas/configurarConta', 'refresh');
-				}
-			}
-			else{
-				$this->session->set_flashdata('falhaUpdate', $this->form_validation->error_string('',''));
-				redirect('paginas/configurarConta', 'refresh');
-			}
+		$senha = $this->input->post('confSenha');
+
+		if($this->input->post('nome')){
+			$conf = $this->input->post('nome');
+			$campo = 'nm_Usuario';
+			$this->form_validation->set_rules('nome', 'Nome', 'max_length[20]|required');
+		}
+		else if($this->input->post('email')){
+			$conf = $this->input->post('email');
+			$campo = 'ds_EmailUsuario';
+			$this->form_validation->set_rules('email', 'E-mail', 'trim|max_length[50]|required');
+		}
+		else if($this->input->post('senha')){
+			$conf = $this->input->post('senha');
+			$campo = 'ds_SenhaUsuario';
+			$this->form_validation->set_rules('senha', 'Senha', 'trim|max_length[20]|required');
 		}
 		else{
 			redirect('paginas/configurarConta', 'refresh');
 		}
+			
+		if($this->form_validation->run() == true){
+			require_once APPPATH."models/Usuario_model.php";
+		    $this->load->model('usuariodao');
+		    $usdao = $this->usuariodao;
+		    if($usdao->confirmaSenha($senha, $this->session->userdata('id')) == true){
+			    if($usdao->updateUsuario($campo, $conf, $this->session->userdata('id')) == true){
+					$this->session->set_flashdata("sucesUpdate", "Atualizado com sucesso!");
+			    	redirect('paginas/configurarConta', 'refresh');
+				}
+				else{
+					$this->session->set_flashdata("falhaUpdate", "Ocorreu um erro ao tentar atualizar.");
+			    	redirect('paginas/configurarConta', 'refresh');
+				}
+		    }
+		    else{
+		    	$this->session->set_flashdata("falhaUpdate", "Senha Incorreta!");
+			    redirect('paginas/configurarConta', 'refresh');
+		    }
+		}
+		else{
+			$this->session->set_flashdata('falhaUpdate', $this->form_validation->error_string('',''));
+			redirect('paginas/configurarConta', 'refresh');
+		}
+
 		
 	}
 	
