@@ -24,7 +24,7 @@
       <div class="container-fluid addsite login-sec">
         <h1 style="border:none">Cadastrar Site</h1>
         <div class="row">
-          <div class="col-lg-5 col-md-5 col-sm-5 login-block">
+          <div class="col-lg-5 col-md-5 col-sm-5">
             <div class="form-style">
               
               

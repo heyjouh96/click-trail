@@ -425,27 +425,25 @@ button a:hover{
 .addsite{
     width:100%;
     border-radius:10px;
-    padidng:10px;
+    padding:10px;
 }
 .addsite form{
     width:100%;
-    background:#030321;
     border-radius:10px;
-    padding:10px;
+    padding:15px;
+    border: 2px solid #DDD;
+    border-top: 10px solid #DDC;
 }
 .addsite label{
-    color:white;
     margin:5px;
     
 }
 .addsite h2{
-    color:white;
     padding:7px;
     
 }
 
 .form-style{
-    background:#030321;
     padding:30px
     
 }
@@ -461,7 +459,7 @@ button a:hover{
 
 .form-setting input{
     margin:5px;
-    border:2px solid #6A5ACD;
+    border:2px solid #C0C0C0;
 }
 hr{
     border-top:5px solid #6A5ACD;
