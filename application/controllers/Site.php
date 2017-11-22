@@ -25,7 +25,7 @@ class Site extends CI_Controller {
             $sitedao->insert($site);
             
 			$this->session->set_userdata("cadastro", "Cadastrado com Sucesso!");
-			redirect('paginas/cadastrarSite');
+			redirect('paginas/painel');
 			
 			
 		}
