@@ -72,6 +72,13 @@ class SiteDAO extends CI_Model {
 		return $this->db->get_where('TB_ClickCount', array('dominio' => $dominio->ds_Dominio, 'mes' => date('n')))->result();
 	}
 	
+	public function totalMeses($dominio){
+		$this->db->select('mes');
+		$this->db->select_sum('qtd');
+		$this->db->group_by('mes');	
+		return $this->db->get_where('TB_ClickCount', array('dominio' => $dominio->ds_Dominio))->result();
+	}
+	
 	public function contaClick($ds, $dominio, $m, $a){
 	    $querydominio = $this->db->query("SELECT * FROM TB_ClickCount WHERE dominio = '$dominio'")->result();
         $queryds = $this->db->query("SELECT * FROM TB_ClickCount WHERE ds = '$ds' AND dominio = '$dominio'")->result();

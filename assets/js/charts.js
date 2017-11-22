@@ -2,7 +2,7 @@ window.onload = main();
 window.onload = mostraPizza();
 
 function mostraPizza(){	
-	$('#chartBar, #chartLine').css('display', 'none');
+	$('#chartBar').css('display', 'none');
 	$('#chartPie').css('display', 'block');
 	
     // pega as informações do site_info
@@ -13,7 +13,6 @@ function mostraPizza(){
     	var arr = new Array();
         arr['y'] = parseInt(qtd[i].innerHTML);
         arr['name'] = ds[i].innerHTML;
-        console.log(arr);
         infos.push(arr);
     }
     
@@ -51,41 +50,40 @@ function explodePie (e) {
 
 
 function main(){
+		
+	var ds = $('.nmMes').toArray();
+    var qtd = $('.qtdMes').toArray();
+    var infos = [];
+    for (var i = 0; i < ds.length; i++ ) {
+    	var arr = new Array();
+        arr['y'] = parseInt(qtd[i].innerHTML);
+        arr['x'] = new Date(2017, parseInt(ds[i].innerHTML), 0);
+        infos.push(arr);
+    }
 	
-	$('#mostraMeses').click(function(e){
-		
-		$('#outrosMeses').css('display','block');
-		$('#chartLine').css('display', 'block');
-		
-		var chart = new CanvasJS.Chart("chartLine", {
-			animationEnabled: true,
-			theme: "light2",
-			title:{
-				text: "Simple Line Chart"
-			},
-			axisY:{
-				includeZero: false
-			},
-			data: [{        
-				type: "line",       
-				dataPoints: [
-					{ x: "Jan", y: 450},
-					{ y: 414},
-					{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-					{ y: 460 },
-					{ y: 450 },
-					{ y: 500 },
-					{ y: 480 },
-					{ y: 480 },
-					{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-					{ y: 500 },
-					{ y: 480 },
-					{ y: 510 }
-				]
-			}]
-		});
-		chart.render();
+	var chart = new CanvasJS.Chart("chartLine", {
+		animationEnabled: true,
+		theme: "light2",
+		title:{
+			text: "Clicks por Mês"
+		},
+		axisX:{
+			valueFormatString: "DD MMM",
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true
+			}
+		},
+		axisY:{
+			title: "Quantidade de clicks",
+			includeZero: false
+		},
+		data: [{        
+			type: "line",       
+			dataPoints: infos
+		}]
 	});
+	chart.render();
 	
 	$('#chartBar').css('display', 'none');
 	

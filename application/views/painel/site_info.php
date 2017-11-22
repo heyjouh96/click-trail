@@ -25,31 +25,50 @@
 			<div class="col-lg-5 col-xs-12 item-style">
 				<h1>Visão Geral</h1>
 				<hr>
-					<?php foreach($itens as $i){ ?>
-					  
-					<p> <b class="itemDs"><?= $i->ds ?></b> : <span class="itemQtd"><?= $i->qtd ?></span> clicks <p>
-					  
-					<?php } ?>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<td>Descrição</td>
+							<td>Qtd. Clicks</td>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($itens as $i){ ?>
+						<tr>
+							<td class="itemDs"><?= $i->ds ?></td>
+							<td class="itemQtd"><?= $i->qtd ?></td>
+						</tr>  
+						<?php } ?>
+					</tbody>
+				</table>
+				
+				<!-- ignorar isso aqui -->
+				<?php foreach($itens as $i){ ?>
+				<div style='display:none'>  
+					<progress value="<?= $i->qtd ?>" max="<?= $info[0]->total ?>"></progress> <small class='itemPct'><?= round(($i->qtd * 100)/$info[0]->total, 2) ?> %</small>
+				</div>  
+				<?php } ?>
+				
 					
-					<?php foreach($itens as $i){ ?>
-					
-					<div style='display:none'>  
-						<progress value="<?= $i->qtd ?>" max="<?= $info[0]->total ?>"></progress> <small class='itemPct'><?= round(($i->qtd * 100)/$info[0]->total, 2) ?> %</small>
-					</div>  
-					<?php } ?>
-					
-					<h1>Este Mês <small><?= date('F'); ?></small></h1>
-					<hr>
-					<?php foreach($esteMes as $em){ ?>
-		  
-					<h3>  </h3>
-					<p> <b><?= $em->ds ?> :</b> <span><?= $em->qtd ?> </span> clicks </p>
-					  
-					<?php } ?>
-					<button class="btn btn-dark">
-						<span><i class="icono-calendar"></i></span>
-						<a href="#" id="mostraMeses">Conferir Meses anteriores</a>
-					</button>
+				<h1>Este Mês <small><?= date('F'); ?></small></h1>
+				<hr>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<td>Descrição</td>
+							<td>Qtd. Clicks</td>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($esteMes as $em){ ?>
+						<tr>
+							<td><?= $em->ds ?></td>
+							<td><?= $em->qtd ?></td>
+						</tr>  
+						<?php } ?>
+					</tbody>
+				</table>
+				
 		    </div>
 		    
 			<div class="col-lg-6 col-xs-12 ml-auto panel">
@@ -62,29 +81,14 @@
 			</div>
 		</div>
 		
-		<div id="outrosMeses" style="display:none">
-			<h1>Meses Anteriores</h1>
+		<hr>
+		<div id="outrosMeses">
 			
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-			sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-			magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-			quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-			ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-			dolor in hendrerit in vulputate velit esse molestie consequat,
-			vel illum dolore eu feugiat nulla facilisis at vero eros et
-			accumsan et iusto odio dignissim qui blandit praesent luptatum
-			zzril delenit augue duis dolore te feugait nulla facilisi.
-			Nam liber tempor cum soluta nobis eleifend option congue
-			nihil imperdiet doming id quod mazim placerat facer possim
-			assum. Typi non habent claritatem insitam; est usus legentis
-			in iis qui facit eorum claritatem. Investigationes
-			demonstraverunt lectores legere me lius quod ii legunt saepius.
-			Claritas est etiam processus dynamicus, qui sequitur mutationem
-			consuetudium lectorum. Mirum est notare quam littera gothica,
-			quam nunc putamus parum claram, anteposuerit litterarum formas
-			humanitatis per seacula quarta decima et quinta decima. Eodem
-			modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-			in futurum.</p>
+			<?php foreach($totalMeses as $tm){ ?>
+			<div style='display:none'>  
+				<p class="nmMes"><?= $tm->mes ?></p><small class='qtdMes'><?= $tm->qtd ?></small>
+			</div>  
+			<?php } ?>
 			
 			<div id="chartLine" style="height: 370px; width: 100%;"></div>
 		</div>

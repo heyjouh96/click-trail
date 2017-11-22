@@ -50,8 +50,10 @@ class Site extends CI_Controller {
 			    // pega informação de cada item clicado (ds)
 			    $dados['itens'] = $this->sitedao->getSiteItens($dados['host']);
 			    $dados['esteMes'] =  $this->sitedao->esteMes($dados['host']);
+			    $dados['totalMeses'] = $this->sitedao->totalMeses($dados['host']);
 				$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
 				$dados['active'] = '';
+				
 				
 			    $this->load->view('includes/header');
 			    $this->load->view('includes/menupainel', $dados);
