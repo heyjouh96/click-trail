@@ -95,7 +95,7 @@ function main(){
 	// BARRA
 	$('#mostraBarras').click(function(e){
 		
-		$('#chartPie, #chartLine').css('display', 'none');
+		$('#chartPie').css('display', 'none');
 		$('#chartBar').css('display', 'block');
 		
 		var ds = $('.itemDs').toArray();

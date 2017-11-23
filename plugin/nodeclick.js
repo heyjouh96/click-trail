@@ -1,3 +1,0 @@
-var connection = mysql.createConnection({
-    
-})

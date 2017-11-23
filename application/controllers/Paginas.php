@@ -69,4 +69,13 @@ class Paginas extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 	
+	public function baixarPlugin(){
+		$dados['active'] = '';
+		
+		$this->load->view('includes/header');
+		$this->load->view('includes/menupainel', $dados);
+		$this->load->view('painel/plugin');
+		$this->load->view('includes/footer');
+	}
+	
 }

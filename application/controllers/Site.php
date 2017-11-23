@@ -54,11 +54,16 @@ class Site extends CI_Controller {
 				$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
 				$dados['active'] = '';
 				
-				
-			    $this->load->view('includes/header');
-			    $this->load->view('includes/menupainel', $dados);
-				$this->load->view('painel/site_info', $dados);
-				$this->load->view('includes/footer');
+				if($dados['itens'] == null){
+					redirect('paginas/baixarPlugin', 'refresh');
+				}
+				else{
+					$this->load->view('includes/header');
+				    $this->load->view('includes/menupainel', $dados);
+					$this->load->view('painel/site_info', $dados);
+					$this->load->view('includes/footer');
+				}
+			    
 			}
 			else{
 		    	redirect('paginas/painel', 'refresh');

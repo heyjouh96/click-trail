@@ -1,10 +1,10 @@
 $(main);
 
 function main(){
-    
     $(".click-solo").click(function(e){
-        alert(e.currentTarget.id);
-        sendClick(e.currentTarget.id, location.hostname);
+        var ds = $(this).attr('data-click');
+        alert(ds);
+        sendClick(ds, location.hostname);
     });
     
     
@@ -18,7 +18,6 @@ function main(){
             data: {ds: ds, dominio: dominio}
         });
     }
-    
     
     
     
