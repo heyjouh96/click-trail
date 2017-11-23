@@ -50,10 +50,10 @@ class Usuario extends CI_Controller {
 	    $senha2 = $this->input->post('senha2');
 	    
 	    // DEFINE REGRAS
-	    $this->form_validation->set_rules('nome',	'Nome', 		'max_length[20]|required');
-	    $this->form_validation->set_rules('sbnome', 'Sobrenome',	'max_length[50]|required');
-	    $this->form_validation->set_rules('email',	'E-mail',		'trim|max_length[50]|required');
-	    $this->form_validation->set_rules('senha1', 'Senha',		'trim|max_length[20]|required');
+	    $this->form_validation->set_rules('nome',	'<b>Nome</b>', 		'max_length[20]|required');
+	    $this->form_validation->set_rules('sbnome', '<b>Sobrenome</b>',	'max_length[50]|required');
+	    $this->form_validation->set_rules('email',	'<b>E-mail</b>',		'trim|max_length[50]|valid_email|required');
+	    $this->form_validation->set_rules('senha1', '<b>Senha</b>',		'trim|min_length[5]|max_length[20]|required');
 	    
 	    // CONFERE SE DADOS ESTÃO NAS REGRAS 
 		if($this->form_validation->run() == true){
@@ -114,12 +114,12 @@ class Usuario extends CI_Controller {
 		else if($this->input->post('email')){
 			$conf = $this->input->post('email');
 			$campo = 'ds_EmailUsuario';
-			$this->form_validation->set_rules('email', 'E-mail', 'trim|max_length[50]|required');
+			$this->form_validation->set_rules('email', 'E-mail', 'trim|max_length[50]|valid_email|required');
 		}
 		else if($this->input->post('senha')){
 			$conf = $this->input->post('senha');
 			$campo = 'ds_SenhaUsuario';
-			$this->form_validation->set_rules('senha', 'Senha', 'trim|max_length[20]|required');
+			$this->form_validation->set_rules('senha', 'Senha', 'trim|min_length[5]|max_length[20]|required');
 		}
 		else{
 			redirect('paginas/configurarConta', 'refresh');

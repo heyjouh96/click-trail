@@ -25,10 +25,6 @@
       <?php } ?>
   		
   		<h1>Configurações</h1>
-		
-		<b class="b-effect"><?= $this->session->userdata('nome') . " " . $this->session->userdata('sbnome') ?></b>
-		<hr>
-		
 
 		    
       <!-- TROCA NOME -->
@@ -56,7 +52,9 @@
 		  <!-- TROCA SENHA -->
 		  <hr class="hr-style">
       <b class="b-effect">Alterar Senha</b><br><br>
-      <button type="submit" class="btn btn-outline-danger">Alterar</button>
+      <button type="submit" class="btn btn-outline-danger" data-toggle="modal" data-target="#senhaModal">Alterar</button>
+      
+      
 
 		<!-- Modal Troca Nome -->
     <div class="modal fade" id="nomeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -71,8 +69,15 @@
           <form action="<?= base_url() ?>usuario/configurarConta" method="post">
             <div class="modal-body">
               <div class="form-group">
-                <label for="nome">Novo Nome</label>
-                <input type="text" class="form-control" name="nome" value="<?= $this->session->userdata('nome') ?>" required>
+                <label>Novo Nome</label>
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" name="nome" value="<?= $this->session->userdata('nome') ?>" required>
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" name="nome" value="<?= $this->session->userdata('sbnome') ?>" required>
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label for="confSenha">Digite sua Senha</label>

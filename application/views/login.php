@@ -1,14 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Click-trail</a>
+    <a class="navbar-brand" href="<?= base_url() ?>">Click-trail</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class= "nav-link glyphicon glyphicon-user" href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url() ?>paginas/login">Login</a>
         </li>
@@ -24,27 +21,6 @@
     
     
 </div>    
-<!--Login
-    <div class="container-fluid">
-        <div class="row">
-            <h1 class="title">Área de Usuários</h1>
-            
-            
-            <h2>Fazer Login</h2>
-            <form action="<?= base_url() ?>login/logar" method="post" name="login">
-                
-                <label for="email">E-mail</label>
-                <input type="text" name="email" placeholder="Digite seu e-mail"> <br>
-                
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha"> <br>
-                
-                <input type="submit" value="Fazer Login">
-                
-            </form>
-        </div>
-    </div>
- -->   
  
  <!-- LOGIN -->
     <section class="login-block">
@@ -77,11 +53,7 @@
                           </div>
                       
                       
-                          <div class="form-check">
-                              <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                  <small>Manter-me conectado</small>
-                                </label>
+                          <div class="form-group">
                               <button type="submit" class="btn btn-login float-right">Fazer Login</button>
                           </div>
                     </form><br>
