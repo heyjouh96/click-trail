@@ -6,20 +6,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Painel">
+          <a class="nav-link" href="<?= base_url() ?>paginas/painel">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Painel</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cadastrar Site">
+          <a class="nav-link" href="<?= base_url() ?>paginas/cadastrarSite">
             <i class="fa fa-fw fa-plus"></i>
             <span class="nav-link-text">Cadastrar Site</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Configurações">
+          <a class="nav-link" href="<?= base_url() ?>paginas/configurarConta">
             <i class="fa fa-fw fa-gears"></i>
             <span class="nav-link-text">Configurações</span>
           </a>
@@ -37,7 +37,7 @@
             <?php } ?>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ajuda">
           <a class="nav-link" href="tables.html">
             <i class="fa fa-fw fa-info-circle"></i>
             <span class="nav-link-text">Ajuda</span>

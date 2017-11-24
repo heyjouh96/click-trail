@@ -40,7 +40,7 @@
     <script src="<?= base_url() ?>assets/js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="<?= base_url() ?>assets/js/sb-admin-datatables.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/sb-admin-charts.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/sb-admin-charts.js"></script>
   </div>
 </body>
 
