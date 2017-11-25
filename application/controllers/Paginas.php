@@ -61,6 +61,8 @@ class Paginas extends CI_Controller {
 	}
 	
 	public function configurarConta(){
+		$this->load->model('sitedao');
+		$dados['sites'] = $this->sitedao->getSites($this->session->userdata('id'));
 		$dados['active'] = 'configurarConta';
 		
 		$this->load->view('includes/header');
