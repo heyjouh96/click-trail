@@ -23,7 +23,7 @@
         
         <h1>Cadastrar Novo Site</h1>
         
-        <div class="card mb-3 col-lg-5 col-md-5 col-sm-5">
+        <div class="card mb-3 col-lg-5 col-md-5 col-sm-5 panel">
           <div class="form-style">
             
             <form action="<?= base_url() ?>site/cadastrar" method="post" name="cadastro">

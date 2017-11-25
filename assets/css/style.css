@@ -126,13 +126,16 @@ h2{
     
 }
 
+
 #mainNav{
     padding:10px;
+    background:#0d172e;
+    color:white;
+    font-size:16px;
+    border-top:5px solid #BC0000;
 }
 
-#mainNav:hover{
-    color:#030321;
-}
+
 
 .edit{
     padding-top:100px;
@@ -248,14 +251,12 @@ h2{
 
 .navi a:hover{
     background: #122143;
-    border-left: 5px solid #5584ff;
+    border-left: 5px solid #F00;
     padding-left: 15px;
 }
 
 .navi a{
     
-    border-bottom: 1px solid #0b122e;
-    border-top: 1px solid #0b122e;
     color: #ffffff;
     display: block;
     font-size: 17px;
@@ -281,54 +282,33 @@ h2{
     color:#030321;
 }
 
-.info-site{
-    margin:20px 15px;
-    padding:7px 5px;
-    height:auto;
-    background:#DC0000;
-    border-radius:5px;
-}
 
 .info-site2{
-    width:100%;
-    padding:12px 20px;
     height:auto;
-    background:#BC0000;
+    background:#DC0000;
     
 }
 
-.info-site a{
-    font-size:15px;
-    float:right;
-    color:#FFF;
-    
+.info-site{
+    background:#AC0000;
 }
-
-.info-site a:hover{
+.info-site2 a:hover{
     text-decoration:none;
     color:#DDD;
 }
 
-.info-site span{
-    margin:10px;
-}
-
-.info-site small{
-    margin:10px;
-}
 /*MENU*/
-.navbar{
-    background-color: #122143;
+.navbar-style{
+    background-color:#0d172e;
     color:white;
     font-size:16px;
-    border-top:5px solid #6A5ACD;
+    border-top:5px solid #BC0000;
+}
+.navbar-brand{
+    margin:2px;
+    font-size: 20px;
 }
 
-.navbar-brand{
-    padding-right:30px; 
-    border-right:red 2px solid;
-    font-size: 30px;
-}
 
 .well{
     float:right;
@@ -336,34 +316,9 @@ h2{
 .usrNome{
     float:right;
 }
-
-.icone{
-    float:right;
-    margin-left:10px;
+.nav-item{
+    background:#0d172e;
 }
-
-.icono-flag{
-    padding:20px;
-}
-
-
-/*.info-site{
-    background: aqua;
-    margin: 5px;
-    padding: 5px;
-    box-sizing: border-box;
-}
-*/
-
-
-/*
-.ret{
-    background:#121260;
-    height:auto;
-    border-radius:2px;
-    width:100%;
-}
-*/
 
 .fundo{
     background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
@@ -373,7 +328,10 @@ h2{
 h1{
     border: none;
     text-decoration:none;
+    padding:5px;
+    margin:10px;
 }
+
 
 p{
     font-weight: normal !important;
@@ -392,10 +350,9 @@ p{
     font-size:19px;
 }
 .panel{
-    border: 3px solid #6A5ACD;
-    border-top:30px solid #6A5ACD;
-    border-radius:15px;
-    padding:25px;
+    border: 3px solid #0d172e;
+    border-radius:10px;
+    padding:3px;
 }
 
 
@@ -417,9 +374,6 @@ button a:hover{
     text-decoration:none;
 }
 
-.icono-mouse{
-    background:#999999;
-}
 
 /*CADASTRAR SITE*/
 .addsite{

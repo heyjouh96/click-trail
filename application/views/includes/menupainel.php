@@ -1,11 +1,11 @@
 <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="<?= base_url() ?>paginas/painel">ClickTrail</a>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-style" id="mainNav">
+    <a class="navbar-brand navbar-border" href="<?= base_url() ?>paginas/painel">ClickTrail</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <ul class="navbar-nav navbar-sidenav navi" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Painel">
           <a class="nav-link" href="<?= base_url() ?>paginas/painel">
             <i class="fa fa-fw fa-dashboard"></i>
@@ -31,7 +31,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <?php foreach($sites as $s){ ?> 
-            <li>
+            <li class="nav-item">
               <a href="<?= base_url() ?>site/siteInfo/<?= $s->cd_Site; ?>"><?= $s->nm_Site ?></a>
             </li>
             <?php } ?>

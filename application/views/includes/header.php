@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
@@ -17,7 +17,14 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url() ?>assets/css/sb-admin.css" rel="stylesheet">
 </head>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="fixed-nav sticky-footer" id="page-top">
+
+<!--CSS-->
+       <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet"> 
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+       <link href="<?=base_url() ?>assets/css/style.css" rel="stylesheet">
+       <link href="<?=base_url() ?>assets/css/dashboard.css" rel="stylesheet">
+
 
 <!--<!DOCTYPE html>
 <html lang="pt-br">
