@@ -6,18 +6,18 @@ class UsuarioDAO extends CI_Model {
 
 	public function getUsuario($email, $senha){
 	    
-	    $this->db->where('ds_EmailUsuario', $email);
-		$this->db->where('ds_SenhaUsuario', $senha);
-		$us = $this->db->get('TB_Usuarios');
+	    $this->db->where('ds_emailusuario', $email);
+		$this->db->where('ds_senhausuario', $senha);
+		$us = $this->db->get('tb_usuarios');
 		require_once APPPATH."models/Usuario_model.php";
 		if($us->num_rows() > 0){
 		    $usuario = $us->result()[0];
-		    $id = $usuario->cd_Usuario;
-		    $nome = $usuario->nm_Usuario;
-		    $sbnome = $usuario->ds_Sobrenome;
-		    $emailUs = $usuario->ds_EmailUsuario;
-		    $senhaUs = $usuario->ds_SenhaUsuario;
-		    $status = $usuario->ds_StatusUsuario;
+		    $id = $usuario->cd_usuario;
+		    $nome = $usuario->nm_usuario;
+		    $sbnome = $usuario->ds_sobrenome;
+		    $emailUs = $usuario->ds_emailusuario;
+		    $senhaUs = $usuario->ds_senhausuario;
+		    $status = $usuario->ds_statususuario;
 		    return new Usuario_model($id, $nome, $sbnome, $emailUs, $senhaUs, $status);
 		}
 		else{

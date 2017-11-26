@@ -75,12 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'wickedjhow',
+	'hostname' => 'ec2-50-19-105-113.compute-1.amazonaws.com',
+	'username' => 'qcfcijyrktwqaf',
 	//'username' => 'gustavo76',
-	'password' => '',
-	'database' => 'click-trail',
-	'dbdriver' => 'mysqli',
+	'password' => 'c4cd5481cc6055282de99a6255493896f985f4688353ba2ecf33f2214cd2a3e3',
+	'database' => 'de7el2use0l9is',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
