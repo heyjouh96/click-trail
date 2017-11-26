@@ -10,7 +10,7 @@ class SiteDAO extends CI_Model {
 	    $site = $this->db->get_where('tb_sites', array('cd_site' => $idSite));
 	    if($site->num_rows() > 0){
 	        $s = $site->result()[0];
-	        if($s->cd_Usuario == $idUs){
+	        if($s->cd_usuario == $idUs){
 	            return TRUE;
 	        }
 	        else{
@@ -48,6 +48,7 @@ class SiteDAO extends CI_Model {
         $this->db->select_sum('c.qtd', 'total');
         $this->db->join('tb_usuarios AS u', 's.cd_usuario = u.cd_usuario');
         $this->db->join('tb_clickcount AS c', 's.ds_dominio = c.dominio');
+        $this->db->group_by('s.cd_site');
         return $this->db->get_where('tb_sites AS s', array('cd_site' => $id))->result();
 	}
 	
@@ -59,24 +60,24 @@ class SiteDAO extends CI_Model {
 	
 	public function getSiteItens($dominio){
 	    // retorna tudo da tabela clickcount do dominio passado por parâmetro
-	    $this->db->select('id, ds, dominio');
+	    $this->db->select('ds, dominio');
 		$this->db->select_sum('qtd');
-		$this->db->group_by('ds');
-		return $this->db->get_where('tb_clickcount', array('dominio' => $dominio->ds_Dominio))->result();
+		$this->db->group_by('ds, dominio');
+		return $this->db->get_where('tb_clickcount', array('dominio' => $dominio->ds_dominio))->result();
 	}
 	
 	public function esteMes($dominio){
-		$this->db->select('id, ds, dominio, mes');
+		$this->db->select('ds, dominio, mes');
 		$this->db->select_sum('qtd');
-		$this->db->group_by('ds');	
-		return $this->db->get_where('tb_clickcount', array('dominio' => $dominio->ds_Dominio, 'mes' => date('n')))->result();
+		$this->db->group_by('ds, dominio, mes');	
+		return $this->db->get_where('tb_clickcount', array('dominio' => $dominio->ds_dominio, 'mes' => date('n')))->result();
 	}
 	
 	public function totalMeses($dominio){
 		$this->db->select('mes');
 		$this->db->select_sum('qtd');
 		$this->db->group_by('mes');	
-		return $this->db->get_where('tb_clickcount', array('dominio' => $dominio->ds_Dominio))->result();
+		return $this->db->get_where('tb_clickcount', array('dominio' => $dominio->ds_dominio))->result();
 	}
 	
 	public function contaClick($ds, $dominio, $m, $a){

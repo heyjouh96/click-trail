@@ -29,15 +29,15 @@
         
         public function toArray(){
             $aux = array();
-            $aux["cd_Site"] = $this->id;
-            $aux["nm_Site"] = $this->nome;
-            $aux["ds_Dominio"] = $this->dominio;
-            $aux["cd_Usuario"] = $this->usuario;
+            $aux["cd_site"] = $this->id;
+            $aux["nm_site"] = $this->nome;
+            $aux["ds_dominio"] = $this->dominio;
+            $aux["cd_usuario"] = $this->usuario;
             return $aux;
         }
         
         public function getClassName(){
-            return "Sites";
+            return "sites";
         }
         
     

@@ -29,8 +29,8 @@ class UsuarioDAO extends CI_Model {
 	public function updateUsuario($campo, $valor, $id){
 		
 		$this->db->set($campo, $valor);
-		$this->db->where('cd_Usuario', $id);
-		$query = $this->db->update('TB_Usuarios');
+		$this->db->where('cd_usuario', $id);
+		$query = $this->db->update('tb_usuarios');
 		if($query){
 			return true;
 		}
@@ -41,9 +41,9 @@ class UsuarioDAO extends CI_Model {
 	}
 
 	public function confirmaSenha($senha, $id){
-		$this->db->where('cd_Usuario', $id);
-		$this->db->where('ds_SenhaUsuario', $senha);
-		$us = $this->db->get('TB_Usuarios');
+		$this->db->where('cd_usuario', $id);
+		$this->db->where('ds_senhausuario', $senha);
+		$us = $this->db->get('tb_usuarios');
 		if($us->num_rows() > 0){
 			return true;
 		}

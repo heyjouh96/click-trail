@@ -4,8 +4,8 @@
         <div class="page-header">
   			<div class="row">
   				<div class="col-lg-7">
-				  	<h1 class="username"><?= $info[0]->nm_Site; ?></h1>
-				  	<p class="dominio"><?= $info[0]->ds_Dominio; ?> </p>
+				  	<h1 class="username"><?= $info[0]->nm_site; ?></h1>
+				  	<p class="dominio"><?= $info[0]->ds_dominio; ?> </p>
 				</div>
 				<div class="col-lg-4 ml-auto">
 					<br>

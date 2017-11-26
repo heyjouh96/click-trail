@@ -39,17 +39,17 @@
         
         public function toArray(){
             $aux = array();
-            $aux["cd_Usuario"] = $this->id;
-            $aux["nm_Usuario"] = $this->nome;
-            $aux["ds_Sobrenome"] = $this->sbnome;
-            $aux["ds_EmailUsuario"] = $this->email;
-            $aux["ds_SenhaUsuario"] = $this->senha;
-            $aux["ds_StatusUsuario"] = $this->status;
+            $aux["cd_usuario"] = $this->id;
+            $aux["nm_usuario"] = $this->nome;
+            $aux["ds_sobrenome"] = $this->sbnome;
+            $aux["ds_emailusuario"] = $this->email;
+            $aux["ds_senhausuario"] = $this->senha;
+            $aux["ds_statususuario"] = $this->status;
             return $aux;
         }
         
         public function getClassName(){
-            return "Usuarios";
+            return "usuarios";
         }
         
     
