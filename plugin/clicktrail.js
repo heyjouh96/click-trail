@@ -15,7 +15,6 @@ function main(){
             type: "POST",
             dataType: "json",
             url: "https://click-trail-wickedjhow.c9users.io/click-trail/site/getClick",
-            //url: "http://newapp-clicktrail.herokuapp.com/novo/getclick/",
             data: {ds: ds, dominio: dominio}
         });
     }

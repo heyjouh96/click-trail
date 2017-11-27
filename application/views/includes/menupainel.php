@@ -57,7 +57,7 @@
             <i class="fa fa-fw fa-user-o"></i><?= $this->session->userdata('nome') ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" href="<?= base_url() ?>usuario/logout">
             <i class="fa fa-fw fa-sign-out"></i>Sair</a>
         </li>
       </ul>
