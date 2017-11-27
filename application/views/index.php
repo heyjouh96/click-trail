@@ -35,6 +35,15 @@
                         		<use xlink:href="#s-text" class="text-copy"></use>
                         	</g>
                         </svg>
+                        <h2>O Plugin <span class="text">contabilizador de cliques</span> que você 
+                        pode confiar.
+                        </h2>
+                        <p class="mt-4 lead">
+                            ClickTrail é um plugin gratuito,
+                            que permite a contagem de cliques que determinada sessão 
+                            de seu site obteve.
+                            
+                        </p>
                     </div>
                 </div>
             </div>
@@ -45,26 +54,51 @@
 
     
 <!--INFO PLUGIN-->
-<div class="container-fluid" transform: translateY(-13.3333px);opacity: 0.92;>
-    <div id="info">
+<div class="container-fluid bg-danger" transform: translateY(-13.3333px);opacity: 0.92;>
+    <div id="info" class="text-center">
         <h2>Sobre o ClickTrail</h2>
-        <hr class="bg-dark w-25 ml-1">
-        
+        <p class="lead text-light">
+            Veja as vantagens que você terá ao instalar o Click-Trail em seu site.
+        </p>
         <div class="row featurette edit">
-            <div class="col-md-5">
-              <img src="assets/img/logo.png">
-            </div>
-            
-            <div class="col-md-7">
-              <h3>Heading</h3>
-              <p class="lead">
-                  Donec id elit non mi porta gravida at eget metus. 
-                  Fusce dapibus, tellus ac cursus commodo, tortor 
-                  mauris condimentum nibh, ut fermentum massa justo 
-                  sit amet risus. Etiam porta sem malesuada magna 
-                  mollis euismod. Donec sed odio dui. 
-              </p>
-            </div>
+            <div class="row d-md-flex mt-4 text-center">
+                    <div class="col-sm-3 mt-2">
+                        <div class=" border-none wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                            <div class="card-block">
+                                <i class="fa fa-hand-pointer-o dp36 icon-box"></i>
+                                <h5 class="card-title pt-5">Conte seus clicks</h5>
+                                <p class="card-text">Com o click-trail, você pode contabilizar a quantidade de cliques que um determinado link do seu site possui.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-2">
+                        <div class=" border-none wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                            <div class="card-block">
+                                <i class="fa fa-bar-chart fa-3 dp36 icon-box" aria-hidden="true"></i>
+                                <h5 class="card-title pt-5">Dados Contabilizados</h5>
+                                <p class="card-text">Você poderá conferir seus dados com gráficos atualizados e gráficos mensais, contabilizando seus cliques de forma detalhada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-2">
+                        <div class=" border-none wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                            <div class="card-block">
+                                <i class="fa fa-tachometer fa-4 dp36 icon-box" aria-hidden="true"></i>
+                                <h5 class="card-title pt-5">Tenha seu Painel</h5>
+                                <p class="card-text">Após se cadastrar, você pode ter acesso ao seu painel e verificar seus sites registrados, cliques, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-2">
+                        <div class=" border-none wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                            <div class="card-block">
+                                <i class="fa fa-user-plus dp36 icon-box" aria-hidden="true"></i>
+                                <h5 class="card-title pt-5">Casdastro de Diversos Domínios</h5>
+                                <p class="card-text">Com o click-trail, você pode cadastrar um ou mais domínios com sua conta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
@@ -72,50 +106,56 @@
 <!--DOWNLOAD-->
 <div class="container-fluid">
     <div id="download">
-        <h2>Como baixar</h2>
-        <hr class="bg-dark w-25 ml-1">
-            
+        <h2 class="text-center">Baixe e comece hoje mesmo!</h2>
+        <p class="lead text-center">Para baixar o plugin, basta você registrar um domínio e clicar no card,</p>
+        <p class="lead text-center">depois é só baixar e instalar para começar a usar.</p>
+        
         <div class="row featurette edit">
-            <div class="col-md-5 order-md-2">
-              <img src="assets/img/logo.png">
-            </div>
-            
-            <div class="col-md-7">
-              <h3>Heading</h3>
-              <p class="lead">
-                  Donec id elit non mi porta gravida at eget metus. 
-                  Fusce dapibus, tellus ac cursus commodo, tortor 
-                  mauris condimentum nibh, ut fermentum massa justo 
-                  sit amet risus. Etiam porta sem malesuada magna 
-                  mollis euismod. Donec sed odio dui. 
-              </p>
+            <div class="text-center">
+              <img  class="img-edit" src="assets/img/landing-office(1).png">
+              
+              
             </div>
         </div>
     </div>
 </div>
 
-
     
 
 
 <!--SOBRE NÓS-->
-<div class="container-fluid">
+<div class="container-fluid text-center bg-danger">
     <div id="about-us">
-        <h2>Sobre nós</h2>
-        <hr class="bg-dark w-25 ml-1">
-        
-        <div class="row featurette about edit">
-            <div class="col-md-12">
-              <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-              <h3>Heading</h3>
-              <p class="lead">
-                  Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. 
-                  Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus,
-                  porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-                  
-                </p>
+        <h2>Desenvolvedores</h2>
+        <p class="lead text-light">Nosso time tem dois desenvolvedores</p>
+        <div class="container bg-danger">
+                <div class="row d-md-flex mt-4 text-center">
+                    <div class="col-sm-6 mt-2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <div class="border-none">
+                            <div class="card-block">
+                                <img src="assets/img/GusFoto.jpg" alt="Male" class="img-team img-fluid rounded-circle">
+                                <h5 class="card-title pt-4">Gustavo Oliveira</h5>
+                                <p class="card-text text-light">Front-End Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 mt-2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <div class="border-none">
+                            <div class="card-block">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mt-2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <div class="border-none">
+                            <div class="card-block">
+                                <img src="assets/img/JohnFoto.jpg" alt="Male" class="img-team img-fluid rounded-circle">
+                                <h5 class="card-title pt-4">Jonathan Araújo</h5>
+                                <p class="card-text text-light">Back-End Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
     
 

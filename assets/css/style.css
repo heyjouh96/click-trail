@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
 /*DIVS PRINCIPAIS*/
 #info,#download,#about-us{
     width:100%;
     height:auto;
-    background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
 }
 
 /*HEADER*/
@@ -19,6 +19,14 @@
     text-align: center;
     padding-top: 120px;
     
+}
+.text{
+    color:#BC0000;
+}
+#header h2{
+    font-family: 'Roboto Slab', serif;
+    color:#DCDCDC;
+    font-size:30px;
 }
 
 html, body{
@@ -79,25 +87,92 @@ svg {
     height:auto;
     padding-top:80px;
     padding-bottom: 100px;
+    background:#dc3545;
 }
 
+#info h2{
+    font-family: 'Noto Serif', serif;
+    font-size:50px;
+    color:#FFF;
+}
+
+#info p{
+    font-family: 'Roboto Slab', serif;
+    color:#DCDCDC;
+}
+
+.icon-box {
+    color: #dc3545;
+    background: #FFF;
+    vertical-align: middle;
+    border-radius: 50px !important;
+    padding: 30px;
+    display: inline;
+}
+
+.card-block{
+    margin:5px;
+    padding:3px;
+}
+
+.card-text{
+    font-family: 'Noto Serif', serif;
+}
+
+h5{
+    font-weight:4px;
+    color:#FFF;
+}
 /*DOWNLOAD*/
 #download{
     height:auto;
     padding-top:80px;
     padding-bottom: 100px;
+    background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
 }
+
+#download h2{
+    font-family: 'Noto Serif', serif;
+    font-size:50px;
+}
+#download p{
+    font-size:25px;
+    color:#8e8e93;
+}
+.img-edit{
+    width: 80%;
+    position: relative;
+    z-index: 80;
+}
+
 
 /*SOBRE NÓS*/
 #about-us{
     padding:10px;
     height:auto;
-    background-color:#f7f7f7;
+    background: #dc3545;
     
 }
-.about{
-    text-align:center;
-    width:100%;
+#about-us h2{
+    font-family: 'Noto Serif', serif;
+    font-size:50px;
+    color:#FFF;
+}
+
+#about-us p{
+    color:#8e8e93;
+}
+.img-team {
+    width: 160px;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
 /*OUTRAS TAGS*/
@@ -146,7 +221,7 @@ h2{
 
 
 .login-block{
-    background: #030321;  /* fallback for old browsers */
+    background: #030321;
     background: linear-gradient(to bottom, #030321, #191970);
     float:left;
     width:100%;
