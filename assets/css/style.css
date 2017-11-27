@@ -145,7 +145,12 @@ h5{
     z-index: 80;
 }
 
-
+.img-edit1{
+    padding:10px;
+    width: 100%;
+    position: relative;
+    z-index: 80;
+}
 /*SOBRE NÓS*/
 #about-us{
     padding:10px;
@@ -518,4 +523,32 @@ body::-webkit-scrollbar-thumb
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #D62929;
+}
+
+
+/*PÁGINA BAIXAR PLUGIN*/
+.fadeIn {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.plugin h2{
+    font-family: 'Roboto Slab', serif;
+    margin:15px;
+    font-size:46px;
+    margin-top:28px;
+}
+.plugin{
+    padding:25px;
+}
+
+.plugin p{
+    margin:15px;
+}
+
+.plugin i{
+    padding:5px;
 }

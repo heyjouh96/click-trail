@@ -1,5 +1,4 @@
 
-
 <!-- INICIO -->
 <div id="inicio">
     <div id="header">
@@ -111,7 +110,7 @@
         <p class="lead text-center">depois é só baixar e instalar para começar a usar.</p>
         
         <div class="row featurette edit">
-            <div class="text-center">
+            <div class="text-center fadeIn">
               <img  class="img-edit" src="assets/img/landing-office(1).png">
               
               
