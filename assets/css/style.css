@@ -145,9 +145,15 @@ h5{
     z-index: 80;
 }
 
+.img-edit2{
+    width: 100%;
+    position: relative;
+    z-index: 80;
+}
+
 .img-edit1{
     padding:10px;
-    width: 100%;
+    width: 90%;
     position: relative;
     z-index: 80;
 }
@@ -225,18 +231,24 @@ h2{
 /*LOGIN E CADASTRO*/
 
 
+.text-lc{
+    font-family: 'Roboto Slab', serif;
+    font-size:20px;
+    margin:20px;
+}
+
 .login-block{
     background: #030321;
     background: linear-gradient(to bottom, #030321, #191970);
     float:left;
     width:100%;
     height:auto;
-    padding : 50px 0;
+    
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
 
 .container{
-    background:#fff; 
+    background:#FFF;
     border-radius: 10px; 
 }
 
@@ -551,4 +563,69 @@ body::-webkit-scrollbar-thumb
 
 .plugin i{
     padding:5px;
+}
+
+.green-circle{
+    position:absolute;
+    padding:85%;
+    margin-left:43%;
+}
+.green-success-check {
+    position: absolute;
+    padding:100%;
+    margin-left:43%;
+}
+/*FOOTER*/
+
+footer {
+    background-color: #fff;
+    border-top: 5px solid #ededed;
+    padding: 50px;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+.list-inline>li {
+    padding: 0 7px;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+footer ul li {
+    font-size: 18px;
+    color: #343434;
+    line-height: 1.6;
+}
+footer ul {
+    margin-bottom: 24px;
+}
+footer a{
+    color:#9fa3a9;
+    text-decoration: none;
+}
+footer a:hover{
+    color:#FFF;
+    text-decoration: none;
+}
+
+footer h3 {
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.social-icons a{
+    font-size: 32px;
+    color: #9fa3a9;
+    padding: 15px;
+}
+
+.copyright{
+    font-size:16px;
 }

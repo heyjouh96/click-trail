@@ -111,7 +111,7 @@
         
         <div class="row featurette edit">
             <div class="text-center fadeIn">
-              <img  class="img-edit" src="assets/img/landing-office(1).png">
+              <img  class="img-edit" src="<?= base_url() ?>assets/img/landing-office(1).png">
               
               
             </div>
@@ -132,7 +132,7 @@
                     <div class="col-sm-6 mt-2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
                         <div class="border-none">
                             <div class="card-block">
-                                <img src="assets/img/GusFoto.jpg" alt="Male" class="img-team img-fluid rounded-circle">
+                                <img src="<?= base_url() ?>assets/img/GusFoto.jpg" alt="Male" class="img-team img-fluid rounded-circle">
                                 <h5 class="card-title pt-4">Gustavo Oliveira</h5>
                                 <p class="card-text text-light">Front-End Designer</p>
                             </div>
@@ -147,7 +147,7 @@
                     <div class="col-sm-4 mt-2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
                         <div class="border-none">
                             <div class="card-block">
-                                <img src="assets/img/JohnFoto.jpg" alt="Male" class="img-team img-fluid rounded-circle">
+                                <img src="<?= base_url() ?>assets/img/JohnFoto.jpg" alt="Male" class="img-team img-fluid rounded-circle">
                                 <h5 class="card-title pt-4">Jonathan Araújo</h5>
                                 <p class="card-text text-light">Back-End Developer</p>
                             </div>
@@ -159,3 +159,4 @@
     
 
 </div>
+

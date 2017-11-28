@@ -1,15 +1,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
-<nav class="navbar navbar-style navbar-expand-md navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-style navbar-expand-md navbar-dark fixed-top">
     <a class="navbar-brand" href="<?= base_url() ?>">Click-trail</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-      
-    </div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url() ?>paginas/login">Login</a>
@@ -19,8 +16,7 @@
         </li>
       </ul>
     </div>
-</nav>
-    
+</nav>    
     
     <!-- CADASTRO -->
     <section class="login-block">
@@ -88,7 +84,7 @@
               <div class="col-md-8 banner-sec">
                  <div class="banner-text">
                     <h2>Click-Trail</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                    <p class="lead text-lc">Cadastre-se e conheça o click-trail!</p>
                  </div>		   
         	    </div>
           </div>

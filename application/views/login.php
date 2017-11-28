@@ -64,7 +64,8 @@
         		<div class="col-md-8 banner-sec">
                      <div class="banner-text">
                         <h2>Click-Trail</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                        <p class="lead text-lc">Registre o seu e-mail e senha cadastrados 
+                        para acessar ao painel.</p>
                      </div>		   
             	</div>
 	        </div>

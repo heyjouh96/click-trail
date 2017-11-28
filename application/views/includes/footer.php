@@ -42,6 +42,28 @@
     <script src="<?= base_url() ?>assets/js/sb-admin-datatables.min.js"></script>
     <script src="<?= base_url() ?>assets/js/sb-admin-charts.js"></script>
   </div>
+  
+  
+  <footer class="bg-light">
+	  <h3>ClickTrail, o plugin contabilizador de cliques.</h3>
+
+	  <ul class="list-inline">
+				<li><a href="#" class="neon">Sobre Nós</a></li>
+				<li><a href="#" class="neon">Contato</a></li>
+	  </ul>
+
+		<p class="copyright">Copyright © 2017 <a href="<?= base_url() ?>usuario/logout" target="_blank">Click<span class="text-danger">Trail</span></a>.
+			<span class="second-line">Todos os direitos reservados.</span>
+		</p>
+
+		<div class="social-icons">
+        <a href="https://github.com/heyjouh96/click-trail" class="github"><i class="fa fa-github"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+    </div>
+</footer>
+  
+  
 </body>
 
 </html>
