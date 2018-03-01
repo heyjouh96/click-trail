@@ -1,5 +1,11 @@
 
 <!-- INICIO -->
+<script type="text/javascript">
+    angular.module('load',[]).controller('first', function($scope){
+        $scope.mensagem = "Agora com Angular";
+        
+    });
+</script>
 <div id="inicio">
     <div id="header">
         <div class="container-fluid">
@@ -36,6 +42,8 @@
                         </svg>
                         <h2>O Plugin <span class="text">contabilizador de cliques</span> que você 
                         pode confiar.
+                        
+                        {{mensagem}}
                         </h2>
                         <p class="mt-4 lead">
                             ClickTrail é um plugin gratuito,
@@ -159,4 +167,3 @@
     
 
 </div>
-
