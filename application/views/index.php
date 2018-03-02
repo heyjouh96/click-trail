@@ -2,7 +2,7 @@
 <!-- INICIO -->
 <script type="text/javascript">
     angular.module('load',[]).controller('first', function($scope){
-        $scope.mensagem = "o homem lanterna";
+        $scope.mensagem = "O Homem Lanterna, O Execrável C9";
         
     });
 </script>
@@ -41,13 +41,13 @@
                         	</g>
                         </svg>
                         <h2>O Plugin <span class="text">contabilizador de cliques</span> que você 
-                        pode confiar. {{mensagem}}
+                        pode confiar. 
                         </h2>
                         <p class="mt-4 lead">
                             ClickTrail é um plugin gratuito,
                             que permite a contagem de cliques que determinada sessão 
                             de seu site obteve.
-                            
+                            {{mensagem}}
                         </p>
                     </div>
                 </div>
